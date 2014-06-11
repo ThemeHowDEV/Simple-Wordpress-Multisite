@@ -8,8 +8,9 @@ Installation Instructions
 
 1.Create define your private string
 ----------
-> - this string will be prepended to your db name
-> - since your dbname and passwords are usually different. Your private string will be set as your password for all sites
+> - an example string would be xciU23Xpo  ( any randomly generated string can be used here )
+> - this string will be prepended to your db name ( xciU23XpoMYDBNAME )
+> - since your dbname and passwords are usually different. Your private string should also be set as your password for all sites
 > **NOTE: Wordpress Multi-site normally uses the same method. One db username with one db password **
 
 2.Setup Databases and Define Domains
