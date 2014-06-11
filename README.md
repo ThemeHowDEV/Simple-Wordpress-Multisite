@@ -40,3 +40,13 @@ Caveates
          return 'sites/'.array_shift(explode(".",$_SERVER['HTTP_HOST'])).'/uploads';  
         }
 
+The Gotchas
+--------------
+
+ 1. Plugins and Themes are visible across all sites
+ 2. No Network admin panel for disabling user access to plugins and themes
+
+**Possible solutions:**
+
+ 1. set users role as editor
+ 2. using site theme to disconnect access to admin functions
