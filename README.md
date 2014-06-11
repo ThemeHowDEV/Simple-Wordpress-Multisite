@@ -34,7 +34,7 @@ Caveates
 --------
 ***Specify upload path per site using this code in your themes function.php***
 ***This will keep the upload path for every site nice and organized***
-    add_filter( 'pre_option_upload_path', 'upload_path_files' );
+        add_filter( 'pre_option_upload_path', 'upload_path_files' );
     function upload_path_files(){
      return 'sites/'.array_shift(explode(".",$_SERVER['HTTP_HOST'])).'/uploads';  
     }
