@@ -15,23 +15,16 @@
  */
 $url = "$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $siteurl = substr($url, 0, strpos($url, '/'));
-if( $siteurl == 'your-domain1-name.com'){
-	define('DB_NAME', 'foo1');
-	define('DB_USER', 'foo-db-user');
-	define('DB_PASSWORD', 'foo-db-user-pass');
+$sitename = array_shift(explode(".",$siteurl));
+// I recomend making your own private sitename string. DO NOT USE THE EXAMPLE!!!
+	define('DB_NAME', $sitename.'_8VeHtnNDMx');
+	define('DB_USER', 'root');
+	define('DB_PASSWORD', 'root');
 	define('DB_HOST', 'localhost');
 	define('DB_CHARSET', 'utf8');
 	define('DB_COLLATE', '');
-	$table_prefix  = 'wp_';
-}elseif($siteurl == 'your-next-domain2-name.com'){
-	define('DB_NAME', 'foo2');
-	define('DB_USER', 'foo2-db-user');
-	define('DB_PASSWORD', 'foo2-db-user-pass');
-	define('DB_HOST', 'localhost');
-	define('DB_CHARSET', 'utf8');
-	define('DB_COLLATE', '');
-	$table_prefix  = 'wp_';
-}
+	$table_prefix  = '8VeHtnNDMx_wp_'.$sitename;
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
