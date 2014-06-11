@@ -6,41 +6,35 @@ Run multiple Wordpress sites on separate databases using 1 Wordpress installatio
 Installation Instructions
 =====================
 
-
+1.Create define your private string
 ----------
+> - this string will be prepended to your db name
+> - since your dbname and passwords are usually different. Your private string will be set as your password for all sites
+> **NOTE: Wordpress Multi-site normally uses the same method. One db username with one db password **
 
-
-1.Create Databases for all domains
+2.Setup Databases and Define Domains
 ---------
 
-> **NOTE:**
-> 
-> - remember the database name, user and password. These will be needed later.
-
-2. Begin Wordpress Setup
----------
->- Log into your Hosting panel and point your domains to the wordpress folder installed on your server.
+> - remember the database name should make should have the private string prepended to the name.
+> - example: gh8YG5O1Ppmy_db_name
+> - point all Wordpress domains to the single wordpress directory on your server.
 
 3. Begin Wordpress Setup
 ---------
 
-> - Go to your first domain and initalize wordpress installer. This will allow Wordpress to generate the needed wp-config file for next step.
-- after successfully installing your first domain.
-- Access your wp-config file using ftp.
-- Paste the code contained in the below snippet into your 'wp-config.php' file.
+> - Go to your first domain and initalize wordpress installer.
 
 
 4. COMPLETED!!
 ---------
->- update the neccessary fields for each domain.
+>- if you encounter any errors like db connection error, check to make sure your private password matches the one used during the database creation.
 >- you can now log into each domain using a single Wordpress Installation
 
 Caveates
 --------
-***Specify upload path per site using this code in your theme function.php***
-
-    add_filter( 'pre_option_upload_url_path', 'subdomain_upload_url' );
-    function subdomain_upload_url()
-    {
-     return 'http://cloud.'.str_replace('http://','',get_bloginfo('url'));
+***Specify upload path per site using this code in your themes function.php***
+***This will keep the upload path for every site nice and organized***
+    add_filter( 'pre_option_upload_path', 'upload_path_files' );
+    function upload_path_files(){
+     return 'sites/'.array_shift(explode(".",$_SERVER['HTTP_HOST'])).'/uploads';  
     }
