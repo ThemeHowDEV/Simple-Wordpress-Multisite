@@ -9,15 +9,15 @@ Installation Instructions
 1.Create define your private string
 ----------
 > - an example string would be xciU23Xpo  ( any randomly generated string can be used here )
-> - this string will be prepended to your db name ( xciU23XpoMYDBNAME )
+> - this string will be prepended to your db name ( xciU23XpoMYSITENAME )
 > - since your dbname and passwords are usually different. Your private string should also be set as your password for all sites
 > **NOTE: Wordpress Multi-site normally uses the same method. One db username with one db password **
 
 2.Setup Databases and Define Domains
 ---------
 
-> - remember the database name should make should have the private string prepended to the name.
-> - example: gh8YG5O1Ppmy_db_name
+> - remember the database name should be your domain name and prepend the private string you made.
+> - example: gh8YG5O1PpMYSITENAME
 > - point all Wordpress domains to the single wordpress directory on your server.
 
 3. Begin Wordpress Setup
