@@ -20,7 +20,7 @@ $sitename = array_shift(explode(".",$siteurl));
 // Remember to prepend the string to your db name and use the string as password for all your sites.
 $privateString = 'gh8YG5O1PpD07C8B7UT1qKiR6p2K1P97';
 // var_dump($sitename);
-	define('DB_NAME', $privateString.$sitename);
+	define('DB_NAME', $sitename.'_'.$privateString);
 	define('DB_USER', 'universal_dbuser_for_all_sites');
 	define('DB_PASSWORD', $privateString);
 	define('DB_HOST', 'localhost');
