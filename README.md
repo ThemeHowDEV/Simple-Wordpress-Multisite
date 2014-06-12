@@ -1,7 +1,22 @@
 Simple-Wordpress-Multisite
 ==========================
 
-Run multiple Wordpress sites on separate databases using 1 Wordpress installation
+Run multiple Wordpress sites on separate databases using 1 Wordpress installation without the plugins or htaccess configurations.
+
+The Benefits
+------------
+
+ - separate databases for each site mean better performance
+ - 
+ - single updating on 1 core installation of Wordpress + Wordpress Plugins
+ - no htaccess hassle
+
+Why Not Wordpress Multi Site?
+-----------------------------
+Multi site is great and offers many features allowing you to control user access.
+ - domain mapping is not needed
+ - each domain will have its on uploads directory for images
+ - again, the dbs are completely separate
 
 Installation Instructions
 =====================
@@ -15,10 +30,26 @@ Installation Instructions
 
 2.Setup Databases and Define Domains
 ---------
+remember the database name should be your domain name and prepend the    private string you made.
 
-> - remember the database name should be your domain name and prepend the private string you made.
-> - example: gh8YG5O1PpMYSITENAME
-> - point all Wordpress domains to the single wordpress directory on your server.
+    example: private string + MYSITENAME = gh8YG5O1PpMYSITENAME
+
+
+In your hosting panel, point all Wordpress domains you have to the single Wordpress directory on your server.
+
+
+    example:foo.com -points to-> /path/to/wordpress
+            foo2.com -points to-> /path/to/wordpress
+            foo3.com -points to-> /path/to/wordpress
+    
+    
+
+ Copy the wp-config.php file in this repo into a text editor and change the privateString and DB_USER into your own.
+
+    $privateString = 'gh8YG5O1PpD07C8B7UT1qKiR6p2K1P97';
+    define('DB_USER', 'universal_dbuser_for_all_sites');
+    
+
 
 3. Begin Wordpress Setup
 ---------
@@ -40,14 +71,21 @@ Caveates
         function upload_path_files(){
          return 'sites/'.array_shift(explode(".",$_SERVER['HTTP_HOST'])).'/uploads';  
         }
+        
+Also, pertaining to the db naming sequence. You can use what ever sequence you choose.
+As long as the sequence matches the one created in the database name.
+
 
 The Gotchas
 --------------
 
  1. Plugins and Themes are visible across all sites
  2. No Network admin panel for disabling user access to plugins and themes
+ 3. sitemaps will overwrite each other
 
-**Possible solutions:**
+The Solutions
+-------------
 
  1. set users role as editor
  2. using site theme to disconnect access to admin functions
+ 3. sitemaps will need a prefix of domain-name_sitemap.xml to avoid overwrites.
