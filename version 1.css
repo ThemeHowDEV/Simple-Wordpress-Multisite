@@ -1144,7 +1144,7 @@ padding:10px;
 }
 
 img {max-width:100%;}
-.EventCalendarPartContainer img {max-width:700px;}
+.EventCalendarPartContainer img {max-width:640px;}
 
 
 /*=========================================================================================
@@ -2100,8 +2100,7 @@ input[id$=chkOrgRegistration] { margin-right:10px; /* $checkbox-to-label-spacing
 }
 
 @media only screen and /*!YUI Compressor */ (max-width:480px) {
-    /* Derry added table height fix July 22 ECBU */
-    .Ev2_PriceTypesCell { width:25%; float:left; height:auto; }
+
     ol.BBEventRegSequenceMap .BBEventRegSequenceMapStep .BBEventRegSequenceMapStepItem:before,
     ol.BBEventRegSequenceMap .BBEventRegSequenceMapStep .BBEventRegSequenceMapStepItem:after { font-size:15px;    }
     ol.BBEventRegSequenceMap .BBEventRegSequenceMapStep .BBEventRegSequenceMapStepItem:before { width:24px; height:24px; line-height:24px; }
@@ -2238,7 +2237,8 @@ td.checklistLabelContainer { vertical-align:top; padding-top:0; }
 }
 
 @media only screen and /*!YUI Compressor */ (max-width:480px) {
-
+    /* Derry added table height fix July 22 ECBU */
+    .Ev2_PriceTypesCell { width:25%; float:left; height:auto; }
     .EventTable th[class^=EventProgressCell] { font-size:1em; }
     .EventItemRegistrationsTable td.BBFieldCaption,
     .EventItemRegistrationsTable td.BBFieldControlCell { display:block; width:50%;    }
