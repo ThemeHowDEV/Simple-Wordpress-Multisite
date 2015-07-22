@@ -1,0 +1,3642 @@
+/*    Stylesheet Table of Contents
+    ----------------------------
+    a. Custom Fonts
+
+    0. Variable Definitions
+
+    1. Foundation 4 Normalize (do not edit)
+
+    2. Foundation 4 Grid (do not edit)
+
+    3. CSS Resets (do not edit)
+
+    4. System Default General Styles
+
+    5. Page Layout and Structurebt
+        5.1 Grid Overrides
+        5.2 Layout - Desktop
+        5.3 Mobile overrides
+
+    6. Menus
+        6.1 Global Menu Styles
+        6.2 Main Navigation
+        6.3 Sidebar Navigation
+        6.4 Utility Menu
+        6.5 Footer Navigation
+        6.6 Secondary Header Navigation
+        6.7 Internal Breadcrumb Navigation
+
+    7. Text
+        7.1 Headers
+        7.2 Links
+        7.3 Paragraphs
+        7.4 Form Fields
+        7.5 Lists
+        7.6 Blockquotes
+
+    8. Images
+
+    9. Tables
+
+    10. Forms
+        10.1 Borders
+        10.2 Header Rows
+        10.3 Content Rows
+        10.4 Global div-based Form Styles
+        10.5 Global Form Styles
+        10.6 Validation
+
+    11. Other Global Class and ID Definitions
+        11.1 Global Classes
+        11.2 Replication Classes & ID's
+
+    12. GENERAL PART STYLES
+        Alumni Class Notes
+        Anonymous Newsletter Subscription
+        Chapter Manager
+        Change User ID/Password
+        Directory
+        Discussion Group
+        Documents
+        Donation Form
+        eCards
+        Email Forwarding Form
+        Event Calendar
+        Event Calendar Group
+        Event Calendar Highlights
+        Event Registration Form
+        Event Registration Form (Classic)
+        Flash Player
+        Form Display
+        Frame
+        Fundraiser
+        Fundraiser Page Elements - Scrolling Donor Display
+        Giving Search
+        Job Board
+        Language Selector
+        LinkedIn Group Join
+        Membership Form
+        Menu
+        Navigation Button
+        News Reader
+        Page Sharing
+        Payment
+        Payment Summary
+        Payment 2.0
+        Payment Summary 2.0
+        Personal Notes
+        Poll
+        Profile Display
+        Profile Form
+        Quick Search
+        Report - Email
+        Search
+        Slideshow
+        Suggested Content
+        Survey
+        Tag Display
+        Transaction Manager
+        User Education Profile Form
+        User Email Preferences Form
+        User Interests Form
+        User Login
+        User Photos Form
+        Volunteer Opportunity
+        Weblog
+        Web Traffic Reports
+
+    13. Other Part and Page Styles
+        13.1 Return User Landing Page
+        13.2 bxSlider Styles
+
+    14. Administrative
+        14.1 Clearfix
+        14.2 Admin Menu Fix
+        14.3 Print Styles
+        14.4 Min page heights in admin view
+
+*/
+
+
+/*=========================================================================================
+    a. Custom Fonts
+==========================================================================================*/
+
+@font-face {
+font-family:'fontello';
+src:url('file/fonts/fontello.eot?70547909');
+src:url('file/fonts/fontello.eot?70547909#iefix') format('embedded-opentype'),
+    url('file/fonts/fontello.woff?70547909') format('woff'),
+    url('file/fonts/fontello.ttf?70547909') format('truetype'),
+    url('file/fonts/fontello.svg?70547909#fontello') format('svg');
+font-weight:normal;
+font-style:normal;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+font-family:"fontello";
+font-style:inherit;
+font-weight:inherit;
+speak:none;
+display:inline-block;
+text-decoration:inherit;
+text-align:center;
+font-variant:normal;
+text-transform:none;
+}
+
+.icon-search:before { content: '\e800'; } /* '?' */
+.icon-menu:before { content: '\e801'; } /* '?' */
+.icon-twitter-circled:before { content: '\e802'; } /* '?' */
+.icon-facebook-circled:before { content: '\e803'; } /* '?' */
+.icon-linkedin-circled:before { content: '\e804'; } /* '?' */
+
+
+/*=========================================================================================
+    0. Variable Definitions
+==========================================================================================*/
+
+/*    #872345; /* $primary-color */
+/*    #ffffff; /* $text-over-primary-color */
+/*    #490513; /* $link-normal-color */
+/*    #882345; /* $link-hover-color */
+/*    #751e3e; /* $button-background-color */
+/*    #ffffff; /* $button-text-color */
+/*    #872345; /* $button-hover-background-color */
+/*    #ffffff; /* $text-over-hover-color */
+/*    #333333; /* $dark-gray */
+/*    #dddddd; /* $medium-gray */
+/*    #eeeeee; /* $subtle-border-color */
+/*    #444; /* $body-copy-color */
+/*    #787878; /* $lighter-body-copy-color */
+/*    #4d4c47; /* $heading-color */
+/*    .5em; /* $margin-below-headings */
+/*    "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Tahoma,sans-serif; /* $body-font-familiy */
+/*    "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Tahoma,sans-serif; /* $header-font-familiy */
+/*    1.5em; /* $gutter-width */
+/*    1.35em; /* $h1-font-size */
+/*    1.25em; /* $h2-font-size */
+/*    1.1em; /* $h3-font-size */
+/*    .9em; /* $body-font-size */
+/*    1.4em; /* $body-line-height */
+/*    0.85em; /* $smaller-than-body-font-size */
+/*    #882345; /* $validation-text-color */
+/*    24px; /* $checkbox-line-height */
+/*    10px; /* $checkbox-to-label-spacing */
+
+
+/*=========================================================================================
+    1. Foundation 4 Normalize (do not edit)
+==========================================================================================*/
+
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden],template{display:none;}script{display:none!important;}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}a{background:transparent;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;margin:.67em 0;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:bold;}dfn{font-style:italic;}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em;}pre{white-space:pre-wrap;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,select{text-transform:none;}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],html input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+
+
+/*=========================================================================================
+    2. Foundation 4 Grid (do not edit)
+==========================================================================================*/
+
+meta.foundation-mq-small{font-family:"only screen and /*!YUI Compressor */ (min-width:768px)";width:768px}meta.foundation-mq-medium{font-family:"only screen and /*!YUI Compressor */ (min-width:1280px)";width:1280px}meta.foundation-mq-large{font-family:"only screen and /*!YUI Compressor */ (min-width:1440px)";width:1440px}*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}html,body{font-size:100%;overflow-x:hidden}body{background:#fff;color:#444; /* $body-copy-color */ padding:0;margin:0;font-family:"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Tahoma,sans-serif; /* $body-font-familiy */ font-weight:normal;font-style:normal;line-height:1;position:relative;cursor:default}a:hover{cursor:pointer}img,object,embed{max-width:100%;height:auto}object,embed{height:100%}img{-ms-interpolation-mode:bicubic}#map_canvas img,#map_canvas embed,#map_canvas object,.map_canvas img,.map_canvas embed,.map_canvas object{max-width:none !important}.left{float:left !important}.right{float:right !important}.text-left{text-align:left !important}.text-right{text-align:right !important}.text-center{text-align:center !important}.text-justify{text-align:justify !important}.hide{display:none}.antialiased{-webkit-font-smoothing:antialiased}img{display:inline-block;vertical-align:middle}textarea{height:auto;min-height:50px}select{width:100%}.row{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1}.row:before,.row:after{content:" ";display:table}.row:after{clear:both}.row.collapse>.column,.row.collapse>.columns{position:relative;padding-left:0;padding-right:0;float:left}.row.collapse .row{margin-left:0;margin-right:0}.row .row{width:auto;margin-left:-0.9375em;margin-right:-0.9375em;margin-top:0;margin-bottom:0;max-width:none;*zoom:1}.row .row:before,.row .row:after{content:" ";display:table}.row .row:after{clear:both}.row .row.collapse{width:auto;margin:0;max-width:none;*zoom:1}.row .row.collapse:before,.row .row.collapse:after{content:" ";display:table}.row .row.collapse:after{clear:both}.column,.columns{position:relative;padding-left:0.9375em;padding-right:0.9375em;width:100%;float:left}@media only screen{.column,.columns{position:relative;padding-left:0.9375em;padding-right:0.9375em;float:left}.small-1{position:relative;width:8.33333%}.small-2{position:relative;width:16.66667%}.small-3{position:relative;width:25%}.small-4{position:relative;width:33.33333%}.small-5{position:relative;width:41.66667%}.small-6{position:relative;width:50%}.small-7{position:relative;width:58.33333%}.small-8{position:relative;width:66.66667%}.small-9{position:relative;width:75%}.small-10{position:relative;width:83.33333%}.small-11{position:relative;width:91.66667%}.small-12{position:relative;width:100%}.small-offset-0{position:relative;margin-left:0%}.small-offset-1{position:relative;margin-left:8.33333%}.small-offset-2{position:relative;margin-left:16.66667%}.small-offset-3{position:relative;margin-left:25%}.small-offset-4{position:relative;margin-left:33.33333%}.small-offset-5{position:relative;margin-left:41.66667%}.small-offset-6{position:relative;margin-left:50%}.small-offset-7{position:relative;margin-left:58.33333%}.small-offset-8{position:relative;margin-left:66.66667%}.small-offset-9{position:relative;margin-left:75%}.small-offset-10{position:relative;margin-left:83.33333%}[class*="column"]+[class*="column"]:last-child{float:right}[class*="column"]+[class*="column"].end{float:left}.column.small-centered,.columns.small-centered{position:relative;margin-left:auto;margin-right:auto;float:none !important}}@media only screen and /*!YUI Compressor */ (min-width:768px){.large-1{position:relative;width:8.33333%}.large-2{position:relative;width:16.66667%}.large-3{position:relative;width:25%}.large-4{position:relative;width:33.33333%}.large-5{position:relative;width:41.66667%}.large-6{position:relative;width:50%}.large-7{position:relative;width:58.33333%}.large-8{position:relative;width:66.66667%}.large-9{position:relative;width:75%}.large-10{position:relative;width:83.33333%}.large-11{position:relative;width:91.66667%}.large-12{position:relative;width:100%}.row .large-offset-0{position:relative;margin-left:0%}.row .large-offset-1{position:relative;margin-left:8.33333%}.row .large-offset-2{position:relative;margin-left:16.66667%}.row .large-offset-3{position:relative;margin-left:25%}.row .large-offset-4{position:relative;margin-left:33.33333%}.row .large-offset-5{position:relative;margin-left:41.66667%}.row .large-offset-6{position:relative;margin-left:50%}.row .large-offset-7{position:relative;margin-left:58.33333%}.row .large-offset-8{position:relative;margin-left:66.66667%}.row .large-offset-9{position:relative;margin-left:75%}.row .large-offset-10{position:relative;margin-left:83.33333%}.row .large-offset-11{position:relative;margin-left:91.66667%}.push-1{position:relative;left:8.33333%;right:auto}.pull-1{position:relative;right:8.33333%;left:auto}.push-2{position:relative;left:16.66667%;right:auto}.pull-2{position:relative;right:16.66667%;left:auto}.push-3{position:relative;left:25%;right:auto}.pull-3{position:relative;right:25%;left:auto}.push-4{position:relative;left:33.33333%;right:auto}.pull-4{position:relative;right:33.33333%;left:auto}.push-5{position:relative;left:41.66667%;right:auto}.pull-5{position:relative;right:41.66667%;left:auto}.push-6{position:relative;left:50%;right:auto}.pull-6{position:relative;right:50%;left:auto}.push-7{position:relative;left:58.33333%;right:auto}.pull-7{position:relative;right:58.33333%;left:auto}.push-8{position:relative;left:66.66667%;right:auto}.pull-8{position:relative;right:66.66667%;left:auto}.push-9{position:relative;left:75%;right:auto}.pull-9{position:relative;right:75%;left:auto}.push-10{position:relative;left:83.33333%;right:auto}.pull-10{position:relative;right:83.33333%;left:auto}.push-11{position:relative;left:91.66667%;right:auto}.pull-11{position:relative;right:91.66667%;left:auto}.column.large-centered,.columns.large-centered{position:relative;margin-left:auto;margin-right:auto;float:none !important}.column.large-uncentered,.columns.large-uncentered{margin-left:0;margin-right:0;float:left !important}.column.large-uncentered.opposite,.columns.large-uncentered.opposite{float:right !important}}@media only screen{[class*="block-grid-"]{display:block;padding:0;margin:0 -0.625em;*zoom:1}[class*="block-grid-"]:before,[class*="block-grid-"]:after{content:" ";display:table}[class*="block-grid-"]:after{clear:both}[class*="block-grid-"]>li{display:inline;height:auto;float:left;padding:0 0.625em 1.25em}.small-block-grid-1>li{width:100%;padding:0 0.625em 1.25em}.small-block-grid-1>li:nth-of-type(n){clear:none}.small-block-grid-1>li:nth-of-type(1n+1){clear:both}.small-block-grid-2>li{width:50%;padding:0 0.625em 1.25em}.small-block-grid-2>li:nth-of-type(n){clear:none}.small-block-grid-2>li:nth-of-type(2n+1){clear:both}.small-block-grid-3>li{width:33.33333%;padding:0 0.625em 1.25em}.small-block-grid-3>li:nth-of-type(n){clear:none}.small-block-grid-3>li:nth-of-type(3n+1){clear:both}.small-block-grid-4>li{width:25%;padding:0 0.625em 1.25em}.small-block-grid-4>li:nth-of-type(n){clear:none}.small-block-grid-4>li:nth-of-type(4n+1){clear:both}.small-block-grid-5>li{width:20%;padding:0 0.625em 1.25em}.small-block-grid-5>li:nth-of-type(n){clear:none}.small-block-grid-5>li:nth-of-type(5n+1){clear:both}.small-block-grid-6>li{width:16.66667%;padding:0 0.625em 1.25em}.small-block-grid-6>li:nth-of-type(n){clear:none}.small-block-grid-6>li:nth-of-type(6n+1){clear:both}.small-block-grid-7>li{width:14.28571%;padding:0 0.625em 1.25em}.small-block-grid-7>li:nth-of-type(n){clear:none}.small-block-grid-7>li:nth-of-type(7n+1){clear:both}.small-block-grid-8>li{width:12.5%;padding:0 0.625em 1.25em}.small-block-grid-8>li:nth-of-type(n){clear:none}.small-block-grid-8>li:nth-of-type(8n+1){clear:both}.small-block-grid-9>li{width:11.11111%;padding:0 0.625em 1.25em}.small-block-grid-9>li:nth-of-type(n){clear:none}.small-block-grid-9>li:nth-of-type(9n+1){clear:both}.small-block-grid-10>li{width:10%;padding:0 0.625em 1.25em}.small-block-grid-10>li:nth-of-type(n){clear:none}.small-block-grid-10>li:nth-of-type(10n+1){clear:both}.small-block-grid-11>li{width:9.09091%;padding:0 0.625em 1.25em}.small-block-grid-11>li:nth-of-type(n){clear:none}.small-block-grid-11>li:nth-of-type(11n+1){clear:both}.small-block-grid-12>li{width:8.33333%;padding:0 0.625em 1.25em}.small-block-grid-12>li:nth-of-type(n){clear:none}.small-block-grid-12>li:nth-of-type(12n+1){clear:both}}@media only screen and /*!YUI Compressor */ (min-width:768px){.small-block-grid-1>li:nth-of-type(1n+1){clear:none}.small-block-grid-2>li:nth-of-type(2n+1){clear:none}.small-block-grid-3>li:nth-of-type(3n+1){clear:none}.small-block-grid-4>li:nth-of-type(4n+1){clear:none}.small-block-grid-5>li:nth-of-type(5n+1){clear:none}.small-block-grid-6>li:nth-of-type(6n+1){clear:none}.small-block-grid-7>li:nth-of-type(7n+1){clear:none}.small-block-grid-8>li:nth-of-type(8n+1){clear:none}.small-block-grid-9>li:nth-of-type(9n+1){clear:none}.small-block-grid-10>li:nth-of-type(10n+1){clear:none}.small-block-grid-11>li:nth-of-type(11n+1){clear:none}.small-block-grid-12>li:nth-of-type(12n+1){clear:none}.large-block-grid-1>li{width:100%;padding:0 0.625em 1.25em}.large-block-grid-1>li:nth-of-type(n){clear:none}.large-block-grid-1>li:nth-of-type(1n+1){clear:both}.large-block-grid-2>li{width:50%;padding:0 0.625em 1.25em}.large-block-grid-2>li:nth-of-type(n){clear:none}.large-block-grid-2>li:nth-of-type(2n+1){clear:both}.large-block-grid-3>li{width:33.33333%;padding:0 0.625em 1.25em}.large-block-grid-3>li:nth-of-type(n){clear:none}.large-block-grid-3>li:nth-of-type(3n+1){clear:both}.large-block-grid-4>li{width:25%;padding:0 0.625em 1.25em}.large-block-grid-4>li:nth-of-type(n){clear:none}.large-block-grid-4>li:nth-of-type(4n+1){clear:both}.large-block-grid-5>li{width:20%;padding:0 0.625em 1.25em}.large-block-grid-5>li:nth-of-type(n){clear:none}.large-block-grid-5>li:nth-of-type(5n+1){clear:both}.large-block-grid-6>li{width:16.66667%;padding:0 0.625em 1.25em}.large-block-grid-6>li:nth-of-type(n){clear:none}.large-block-grid-6>li:nth-of-type(6n+1){clear:both}.large-block-grid-7>li{width:14.28571%;padding:0 0.625em 1.25em}.large-block-grid-7>li:nth-of-type(n){clear:none}.large-block-grid-7>li:nth-of-type(7n+1){clear:both}.large-block-grid-8>li{width:12.5%;padding:0 0.625em 1.25em}.large-block-grid-8>li:nth-of-type(n){clear:none}.large-block-grid-8>li:nth-of-type(8n+1){clear:both}.large-block-grid-9>li{width:11.11111%;padding:0 0.625em 1.25em}.large-block-grid-9>li:nth-of-type(n){clear:none}.large-block-grid-9>li:nth-of-type(9n+1){clear:both}.large-block-grid-10>li{width:10%;padding:0 0.625em 1.25em}.large-block-grid-10>li:nth-of-type(n){clear:none}.large-block-grid-10>li:nth-of-type(10n+1){clear:both}.large-block-grid-11>li{width:9.09091%;padding:0 0.625em 1.25em}.large-block-grid-11>li:nth-of-type(n){clear:none}.large-block-grid-11>li:nth-of-type(11n+1){clear:both}.large-block-grid-12>li{width:8.33333%;padding:0 0.625em 1.25em}.large-block-grid-12>li:nth-of-type(n){clear:none}.large-block-grid-12>li:nth-of-type(12n+1){clear:both}}
+
+
+/*=========================================================================================
+    3. CSS Resets (do not edit)
+==========================================================================================*/
+
+*,*::before,*::after { box-sizing:border-box; }
+
+
+/*=========================================================================================
+    4. System Default General Styles
+==========================================================================================*/
+
+.ReportInformationCell { font-weight:400; height:auto; overflow:visible; }
+.BBGridHeader { font-family:inherit; font-weight:700; }
+.BBGridFooter { font-family:inherit; }
+.BBModalDialog { font-size:1em; }
+.BBModalDialogTitle { background-color:#e2e2e2; border-bottom:0 none; color:#000; font-weight:700; overflow:hidden; padding:.25em; text-align:left; white-space:nowrap; }
+.BBModalDialogContent { padding:0; }
+.BBListingHeading { border:0 none; font-weight:700; color:#333; padding:0; margin:0; line-height:normal; font-family:inherit; font-size:1em; text-align:left!important; }
+.FRCommentsFieldSet .BBListingHeading td { font-weight:700!important; }
+.BBListingItem {  font-family:inherit; }
+.BBListingTable { font-family:inherit; border:0 none!important; }
+.BBMessage { font-weight:400; font-style:normal; font-family:inherit; padding:1em 0; }
+.BBPrivateListingItem { font-family:inherit; font-style:normal; }
+.PagedListFooter { font-family:inherit; font-size:1em; display:block; padding:0 1em; }
+.SpellBody { background-color:transparent; padding:0; }
+.SpellCheckBadWord { font-family:inherit; color:#ea2121; font-weight:400; }
+.SpellCheckTextBox { margin:0 0 .5em; background-color:#fff; }
+.SpellFieldValue { font-size:1em; }
+.SpellHeading { font-family:inherit; font-size:1em; }
+.SpellHeadingCell { background-color:transparent; padding:.5em .5em .25em 0; border:0; }
+.SpellHeadLegend { font-family:inherit; font-size:1em; }
+.SpellLegend { background-color:transparent!important; font-family:inherit; font-weight:700; color:#666; padding:.25em .5em .25em 0; text-align:right; vertical-align:top; white-space:normal; width:33%; font-size:1em; }
+.SpellLegend label { font-weight:400; }
+.SpellSubject { font-size:1em; margin:0; padding:.5em 0; font-weight:700; font-family:inherit; color:#333; }
+.SpellSuggestionList { margin:0 0 .5em; font-family:inherit; border:2px inset #fff; }
+.SpellText { background-color:transparent; padding:0; font-family:inherit; padding:1em; font-style:italic; }
+.SpellTextValue { font-family:inherit; font-size:1em; display:block; margin:1em 0; }
+.BBListEvenRowStyle { font-family:inherit; background-color:transparent!important; }
+.BBListOddRowStyle { font-family:inherit; background-color:#dddddd; /* $medium-gray */ }
+.ReportCalendar { font-family:inherit; font-size:1em; }
+.SpellFieldCaption { font-size:1em; font-weight:400; }
+.SpellFormTable { font-family:inherit; font-size:1em; }
+.ReportFormTable { font-family:inherit; width:100%; margin:1em 0; }
+.ReportFormTable table { width:100%; }
+.ReportFormTable td { padding:0; }
+.ReportFormTable td.w100p { width:auto; }
+.ReportFormTable legend { color:#333; font-size:1em; font-weight:700; margin:0 0 .25em;padding:0; }
+.ReportFormTable img {vertical-align:baseline; }
+#wrapFooter .ReportFormTable { margin:1em auto; width:auto; }
+.SpellFormTitle { font-size:1em; }
+.ReportTitle { height:auto; }
+.ReportTitle span { padding:0; margin:0; }
+.MatchFinderEvenRowStyle { border-bottom:1px solid #e2e2e2; padding-bottom:.5em; margin-bottom:.5em; }
+.ReportEvenRowStyle { border-bottom:1px solid #e2e2e2; margin-bottom:0; padding-bottom:0; }
+.ReportEvenRowStyle td { padding:.5em; }
+.ReportListingHeading { font-size:1em; font-weight:700; color:#333; }
+.ReportListingHeading td { padding:.5em; }
+.MatchFinderOddRowStyle { border-bottom:1px solid #e2e2e2; padding-bottom:.5em; margin-bottom:.5em; }
+.ReportOddRowStyle { border-bottom:1px solid #e2e2e2; padding-bottom:0; margin-bottom:0; }
+.ReportOddRowStyle td { padding:.5em; }
+label[id$=lblTxtYear] { padding-right:3px; }
+td[id$=tdForgotPWDUserNameTitle] br { display:none; }
+:focus { outline:0; }
+.BBPagerPrevPageLink, .BBPagerNextPageLink { padding:5px; border-width:0; }
+.BBPagerPrevPageLink:before { content:"\00AB" ; }
+.BBPagerNextPageLink:after { content:"\00BB" ; }
+.BBPagerPageLink, .BBPagerPageSelectedLink { padding:3px 8px; border:1px solid #dddddd; /* $medium-gray */ }
+.BBPagerPageSelectedLink { background-color:#872345; /* $primary-color */ color:#ffffff; /* $text-over-hover-color */ font-weight:bold; }
+.BBPagerPageLink:hover, .BBPagerPageSelectedLink:hover, .BBPagerPrevPageLink:hover, .BBPagerNextPageLink:hover { background-color:#872345; /* $button-hover-background-color */ color:#ffffff; /* $text-over-hover-color */ text-decoration:none; }
+.BBSequenceMapContentContainer { margin-top:0; }
+.BBFormDisplayEmailContainer { padding:0; }
+
+.BBPager a.BBPagerPageSelectedLink { text-decoration:none; }
+.BBPager { margin:10px; }
+hr,.DiscussionMessageSepHR,.DiscussionTopicSepHR,.BBMembershipCategoryListStart { background:#DDDDDD none repeat scroll 0 0; border:0 none; color:#DDDDDD; display:block; height:1px; margin-bottom:1em; }
+.InterestsFormChecklist td { padding-bottom:5px; }
+
+div:empty { display:none; }
+
+/* Custom responsive scripts required for these styles */
+.checkboxLabel { line-height:normal; }
+
+
+/*=========================================================================================
+    5. Page Layout and Structure
+==========================================================================================*/
+
+
+/*---------------------------------------------
+    5.1 Grid Overrides
+----------------------------------------------*/
+
+body { line-height:1.4em; /* $body-line-height */ }
+
+.row { max-width:none; margin-bottom:1em; }
+.column, .columns { padding-left:1em; padding-right:1em; }
+
+/* because IE8 ignores media queries... */
+/* must use conditional wrapper tag class in layout */
+
+.ie8 .columns { position:relative; }
+.ie8 .columns.large-1 { width:8.33%; }
+.ie8 .columns.large-2 { width:16.66%; }
+.ie8 .columns.large-3 { width:25%; }
+.ie8 .columns.large-4 { width:33.33%; }
+.ie8 .columns.large-5 { width:41.66%; }
+.ie8 .columns.large-6 { width:50%; }
+.ie8 .columns.large-7 { width:58.33%; }
+.ie8 .columns.large-8 { width:66.66%; }
+.ie8 .columns.large-9 { width:75%; }
+.ie8 .columns.large-10 { width:83.33%; }
+.ie8 .columns.large-11 { width:91.66%; }
+.ie8 .columns.large-12 { width:100%; }
+
+/*    TABLET _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+@media only screen and /*!YUI Compressor */ (min-width:600px) {
+
+    .columns.medium-1 { width:8.33%; }
+    .columns.medium-2 { width:16.66%; }
+    .columns.medium-3 { width:25%; }
+    .columns.medium-4 { width:33.33%; }
+    .columns.medium-5 { width:41.66%; }
+    .columns.medium-6 { width:50%; }
+    .columns.medium-7 { width:58.33%; }
+    .columns.medium-8 { width:66.66%; }
+    .columns.medium-9 { width:75%; }
+    .columns.medium-10 { width:83.33%; }
+    .columns.medium-11 { width:91.66%; }
+    .columns.medium-12 { width:100%; }
+
+}
+
+
+/*---------------------------------------------
+    5.2 Layout - Desktop
+----------------------------------------------*/
+
+html, body { background-color:#d1d2d3; }
+
+.column, .columns { padding-top:0em; padding-bottom:1em; }
+
+#container {
+background-color:#fff;
+box-shadow:0 0 6px 0 rgba(0,0,0,.15);
+margin:0 auto 50px;
+max-width:1024px;
+}
+
+#headerBG1 {
+background:url(image/css/bkg_header_left.gif) repeat-x;
+display:block;
+height:215px;
+position:absolute;
+width:100%;
+z-index:1;
+}
+
+#headerBG2 {
+background:url(image/css/bkg_header.gif) no-repeat center;
+box-shadow:0 0 6px 0 rgba(0,0,0,.5);
+display:block;
+height:215px;
+position:absolute;
+width:100%;
+z-index:3;
+}
+
+#headerBG3 {
+background:url(image/css/bkg_header_right.gif) repeat-x top right;
+display:block;
+height:215px;
+position:absolute;
+right:0;
+width:50%;
+z-index:2;
+}
+
+#headerBG4 {
+background:url(image/css/mosaic_bars.gif) no-repeat top right;
+display:block;
+height:55px;
+position:relative;
+right:0;
+width:100%;
+z-index:4;
+}
+
+#headerTopWrapper {}
+#headerTopLeft {}
+
+#headerTopRight {
+float:right;
+text-align:right;
+}
+
+#headerWrapper {
+margin-bottom:0;
+position:relative;
+z-index:5;
+}
+
+#headerLogo {
+margin-top:-19px;
+padding:0;
+}
+
+#logoMobile, #logoTablet { display:none; }
+
+#logoDesktop a { display:inline-block; }
+
+#uAdv {
+position:absolute;
+top:90px;
+font-size:1.3em;
+left:124px;
+color:#fff;
+text-decoration:none;
+}
+
+#uAdv:hover {
+text-decoration:underline;
+}
+
+.login-link {
+position: absolute;
+right: 10px;
+top: -45px;
+}
+
+.login-link a {
+color:#fff;
+text-decoration:none;
+}
+
+.login-link a:hover {
+color:#fff;
+}
+
+.login-link a img {
+margin-bottom:3px;
+}
+
+#navigationWrapper {
+margin:0;
+padding:0;
+}
+
+#navigationWrapper::before {
+border-left:10px solid transparent;
+border-top:10px solid #999;
+bottom:0;
+left:0;
+margin-left:-10px;
+position:absolute;
+z-index:6;
+}
+
+#navigationWrapper::after {
+border-right:10px solid transparent;
+border-top:10px solid #999;
+bottom:0;
+margin-right:-10px;
+position:absolute;
+right:0;
+}
+
+#mobileNav, #navigationUtility {display:none;}
+
+#mediaWrapper {
+background-color:#fff;
+margin:0;
+padding:10px;
+position:relative;
+top:-10px;
+}
+
+#media { text-align:center; }
+
+#contentWrapper {
+padding:10px;
+}
+
+#contentPrimaryWrapper {}
+#contentPrimary {}
+#contentPrimary .singleCol {}
+#contentPrimary .leftCol {}
+#contentPrimary .rightCol {}
+
+#contentSecondaryWrapper {}
+#contentSecondary {}
+#contentSecondary .singleCol {}
+
+#footerOuterWrapper { margin-bottom:0; }
+#footerOuter { padding:0; }
+
+#footerTop {
+background-color:#ededed;
+margin:0;
+padding:10px;
+}
+
+#footerTop p { font-size:.75em; }
+
+#footerBottom {
+background-color:#882345;
+box-shadow:0 3px 6px 0 rgba(0,0,0,.15);
+margin:0;
+}
+
+#footerInner {}
+
+#footerInner p {
+color:#fff;
+font-size:.7em;
+line-height:.75em;
+padding-left:10px;
+}
+
+
+/*---------------------------------------------
+    5.3 Mobile overrides
+----------------------------------------------*/
+
+@media only screen and /*!YUI Compressor */ (max-width:1024px) {
+
+    #container { margin-bottom:0; }
+
+}
+
+@media only screen and /*!YUI Compressor */ (min-width:768px) and /*!YUI Compressor */ (max-width:1024px) {
+
+    #headerLogo { padding-left:20px; }
+    #searchBar { right:20px; }
+    #uAdv { padding-left:20px; }
+
+}
+
+@media only screen and /*!YUI Compressor */ (max-width:767px) {
+
+    div[id^="headerBG"] {
+    position:fixed !important;
+    height:98px !important;
+    }
+
+    #headerBG4, #navigationMain, #searchBar { display:none; }
+
+    #headerLogo {
+    margin:0;
+    padding:20px;
+    position:fixed;
+    }
+
+    #logoDesktop, #logoMobile { display:none; }
+    #logoTablet { display:inline-block; }
+    #uAdv { display:none; }
+
+    #mediaWrapper { margin-top:108px; }
+
+}
+
+@media only screen and /*!YUI Compressor */ (max-width:499px) {
+
+    #logoDesktop, #logoTablet { display:none; }
+    #logoMobile { display:inline-block; }
+
+}
+
+
+/*=========================================================================================
+    6. Menus
+==========================================================================================*/
+
+
+/*---------------------------------------------
+    6.1 Global Menu Styles
+----------------------------------------------*/
+
+
+/*---------------------------------------------
+    6.2 Main Navigation
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+#navigationMain {
+background-color:#d1d2d3;
+background:-moz-linear-gradient(to bottom, #ffffff, #d1d2d3);
+background:-webkit-linear-gradient(to bottom, #ffffff, #d1d2d3);
+background:linear-gradient(to bottom, #ffffff, #d1d2d3);
+-moz-background-clip:padding;
+-webkit-background-clip:padding;
+background-clip:padding-box;
+border-bottom:10px solid transparent;
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+height:50px;
+left:-10px;
+margin-top:27px;
+padding:0;
+text-align:center;
+width:calc(100% + 20px);
+}
+
+#navigationMain ul {
+display:inline-block;
+padding:0;
+margin:0;
+list-style:none;
+position:relative;
+text-align:center;
+}
+
+#navigationMain ul li {
+border-left:1px solid #ccc;
+display:inline;
+float:left;
+line-height:20px;
+position:relative;
+text-align:center;
+}
+
+#navigationMain ul li:last-child {
+border-right:1px solid #ccc;
+}
+
+#navigationMain ul li a {
+color:#490513;
+font-size:0.8em;
+text-decoration:none;
+padding:10px 15px;
+float:left;
+}
+
+#navigationMain ul li a:hover,
+#navigationMain ul li.selected a {
+background:#fff;
+color:#333;
+}
+
+/*
+#navigationMain ul li:hover ul {
+display:block;
+}
+*/
+
+#navigationMain ul li:hover > a {
+background-color:#f3f3f3;
+color:#882345;
+}
+
+#navigationMain ul ul {
+background-color:#e3e3e3;
+position:absolute;
+left:0;
+top:100%;
+display:none;
+padding:0px;
+margin:0px;
+}
+
+#navigationMain ul ul li {
+border:none !important;
+display:block;
+margin:0px;
+text-align:left;
+}
+
+#navigationMain ul ul li a {
+width:200px;
+}
+
+/* Give Now Button */
+
+#navigationMain ul li.last > a {
+background-color:#741e3d;
+color:#fff;
+font-size:20px;
+}
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+@media only screen and /*!YUI Compressor */ (max-width: 767px) {
+
+    .menu-button {
+    background-color: rgba(255,255,255,.3);
+    border-radius:3px;
+    color:#fff;
+    cursor:pointer;
+    font-size:35px;
+    font-weight:700;
+    padding:18px 21px;
+    position:fixed;
+    right:20px;
+    top:20px;
+    -moz-transition:all 250ms ease;
+    -o-transition:all 250ms ease;
+    -webkit-transition:all 250ms ease;
+    transition:all 250ms ease;
+    }
+
+    .open-menu {
+    color:#490513;
+    cursor:pointer;
+    font-family:sans-serif;
+    font-size:25px;
+    font-weight:700;
+    padding:18px 20px;
+    position:absolute;
+    right:0;
+    top:0;
+    -moz-transition:all 250ms ease;
+    -o-transition:all 250ms ease;
+    -webkit-transition:all 250ms ease;
+    transition:all 250ms ease;
+    }
+
+    .fade {
+    color:rgba(255,255,255,.5) !important;
+    }
+
+    .rotate {
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+    }
+
+    .overflow { overflow-x:hidden; overflow-y:auto; }
+    .overflow > ul { border-top:1px solid #872245; }
+
+    #mobileNav {
+    background-color:#dedede;
+    display:block;
+    margin-top:98px;
+    position:fixed;
+    width:100%;
+    z-index:3;
+    }
+
+    #mobileNav ul {
+    display:none;
+    margin:0;
+    padding:0;
+    position:relative;
+    text-align:left;
+    }
+
+    #mobileNav ul li {
+    background-color:#dedede;
+    border-top:1px solid #e3e3e3;
+    list-style:none;
+    position:relative;
+    }
+
+    #mobileNav ul li:hover {
+    background-color:#fff;
+    }
+
+    #mobileNav ul li a {
+    color:#490513;
+    display:inline-block;
+    padding:18px 0 17px 20px;
+    text-decoration:none;
+    width:100%;
+    }
+
+    #mobileNav ul li a:hover {
+    color:#882345;
+    }
+
+    #mobileNav ul ul {
+    background-color:#e8e8e8;
+    }
+
+    #mobileNav ul ul li {
+    background-color:#e8e8e8;
+    border-top:1px solid #e3e3e3;
+    }
+
+    #mobileNav ul ul li:hover {
+    background-color:#fff;
+    }
+
+}
+
+
+/*---------------------------------------------
+    6.3 Sidebar Navigation
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+#sideNav ul {
+float:left;
+list-style:none;
+margin:0 0 10px;
+padding:0;
+width:100%;
+}
+
+#sideNav ul li {
+position:relative;
+}
+
+#sideNav ul li a,
+#sideNav > ul > li:not(.selected) {
+display:none;
+}
+
+#sideNav ul ul {
+padding:5px 0 5px 20px;
+position:relative;
+z-index:2;
+}
+
+#sideNav ul ul li a {
+border-bottom:1px solid #bbb;
+color:#872245;
+display:block;
+font-size:18px;
+padding:10px 0;
+text-decoration:none;
+}
+
+#sideNav ul ul ul li a {
+border-bottom:none;
+font-size:14px;
+padding:5px 0;
+}
+
+#sideNav ul li a:hover {
+text-decoration:none;
+color:#490513;
+}
+
+
+.slide-open {
+bottom:0;
+color:#872245;
+cursor:pointer;
+font-family:sans-serif;
+font-size:1.8em;
+font-weight:700;
+padding:11px 10px;
+position:absolute;
+right:0;
+transition:transform 250ms ease;
+}
+
+.rotate {
+-webkit-transform:rotate(45deg);
+-moz-transform:rotate(45deg);
+-ms-transform:rotate(45deg);
+-o-transform:rotate(45deg);
+transform:rotate(45deg);
+}
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    6.4 Utility Menu
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+#searchBar ul {
+list-style:none;
+position:absolute;
+right:10px;
+top:-45px;
+}
+#searchBar li {display:inline-block;}
+
+#searchBar ul li a {
+color:#fff;
+text-decoration:none;
+padding:5px 0px 5px 10px;
+}
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    6.5 Footer Navigation
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.call-to-action-button {
+background:-webkit-linear-gradient(top,#fff,#ededed);
+background:linear-gradient(top,#fff,#ededed);
+background:-moz-linear-gradient(top,#fff,#ededed);
+border:1px solid #b7b7b7;
+border-radius:.4em;
+box-shadow:0 1px 2px rgba(0,0,0,.2);
+color:#606060;
+cursor:pointer;
+display:inline-block;
+font-size:1em;
+margin:.5em 0;
+outline:medium none;
+padding:.5em 1em;
+text-align:center;
+text-decoration:none;
+}
+
+.call-to-action-button:hover {
+background:-moz-linear-gradient(center top,#ededed,#fff);
+background:-webkit-linear-gradient(center top,#ededed,#fff);
+background:linear-gradient(center top,#ededed,#fff);
+text-decoration:none;
+}
+
+.call-to-action-button:active {
+position:relative;
+top:1px;
+}
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+
+/*---------------------------------------------
+    6.6 Secondary Header Navigation
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    6.7 Internal Breadcrumb Navigation
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+#contentPrimary ul.menu {
+font-size:.813em;
+line-height:2.308em;
+padding:0;
+}
+
+#contentPrimary ul.menu ul {
+padding:0;
+}
+
+#contentPrimary ul li {
+/* display:none; */
+}
+
+#contentPrimary ul,
+#contentPrimary ul li.selected {
+display:inline;
+}
+
+#contentPrimary ul li.selected a {
+text-decoration:none;
+}
+
+#contentPrimary ul li li.selected a {
+padding-left:1em;
+position:relative;
+}
+
+#contentPrimary ul li li.selected a:before {
+content:"\00bb";
+left:-.5em;
+position:relative;
+top:-.077em;
+width:2em;
+}
+
+#contentPrimary ul li li.selected a:before:hover {
+text-decoration:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.breadcrumbs ul.menu {font-size:.813em; line-height:2.308em; padding:0;}
+.breadcrumbs ul.menu ul {padding:0;}
+.breadcrumbs ul li {display:none; }
+.breadcrumbs ul,
+.breadcrumbs ul li.selected {display:inline;}
+.breadcrumbs ul li.selected a {text-decoration:none; }
+.breadcrumbs ul li li.selected a {padding-left:1em; position:relative;}
+.breadcrumbs ul li li.selected a:before {content:"\00bb"; left:-.5em; position:relative; top:-.077em;width:2em;}
+.breadcrumbs ul li li.selected a:before:hover {text-decoration:none;}
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+@media only screen and /*!YUI Compressor */ (max-width: 767px) {
+    #contentPrimary ul.menu { display:none; }
+    .breadcrumbs ul.menu { display:none; }
+
+}
+
+
+/*=========================================================================================
+    7. Text
+==========================================================================================*/
+
+
+/*---------------------------------------------
+    7.1 Headers
+----------------------------------------------*/
+
+/*** All headings ***/
+h1,
+h2, *.BBFormTitle, *.EventCalendarName, *.SpellFormTitle, *.ReportTitle, *.LoginSectionHeader, *.DonationListingHeading, *.DonationCaptureListingHeading, *.EventSectionHeader, *.FRDonorListSetCaption, *.FRCommentsFieldSet .FRFieldSetCaption, *.ECardWizardHeading, *.UpcomingEventTitle, *.RecentEventTitle, *.SearchFormTable .SearchFormTitle, *.CHFormTitle, *.NCC_Forms_Title, *.BBMembershipFormTitle, *.BBDocumentFormTitle, *.SubscriptionFormTitle, *.BBAnonymousSubscriptionTitle, *.BBVolOpJobListTitle, *.BBVolOpJobDetailTitle, *.PostChannelStoryFormTitle, *.ReportsLandingTable caption, *.SearchJobHeading, *.JobResultsHeading, *.ClassPageHeaderClassName, *.UPMPartEditToolbarTitle, .Ev2_TitleLabel, .Ev2_RegistrationEventTitle, *.myHomeBox th, td[id$=SectionTitle].BBVolOpSignUpCaption, td[id$=InfoTitle].BBVolOpSignUpCaption,
+h3, *.CalendarFormLegend, *.ListViewDateLabel, *.DetailCaption, *.NewsReaderFormTitle, *.EventItemTitleTime, *.EventItemTitleName, *.EventItemRegistrationsHeader, *.EventItemRegistrantsEventName, *.NewsChannelItemTitle, *.FRSectionHeader, *.FRFieldSetCaption, *.DiscussionGroupHeadingText, *.PostDiscussionReplyHeading, *.PostDiscussionPreviewHeading, *.SurveySubTitle, *.SpellHeading, table.ReportFormTable legend, fieldset .CHFormTitle, *.CalendarViewTopMiddle, *.ReportListingHeading, *.NCC_Forms_Subtitle, *.DiscussionTopicSubject, *.OCCHeader, *.ClassPageHeaderPageName, .Ev2_DateLabel, .Ev2_TimeLabels *, .Ev2_RegistrationEventDate, .Ev2_RegistrationEventTime,
+h4, *.DetailEventTitle, *.ListViewEventDate, *.ClassPageHeaderTeacherName, *.ClassPageHeaderTeacherEmail,
+h5,
+h6 {
+  margin:0 0 0.5em;
+  padding:0;
+  font-weight:bold;
+  color:#4d4c47; /* $heading-color */
+  font-family:"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Tahoma,sans-serif; /* $header-font-familiy */
+  line-height:normal;
+  text-align:left;
+}
+
+/*** <h1>, main part titles, and other elements requiring similar emphasis ***/
+h1 {
+  font-size:1.35em; /* $h1-font-size */
+  clear:both;
+}
+
+/*** <h2>, sub titles within parts, and other elements requiring similar emphasis ***/
+h2, *.BBFormTitle, *.EventCalendarName, *.SpellFormTitle, *.ReportTitle, *.LoginSectionHeader, *.DonationListingHeading, *.DonationCaptureListingHeading, *.EventSectionHeader, *.FRDonorListSetCaption, *.FRCommentsFieldSet .FRFieldSetCaption, *.ECardWizardHeading, *.UpcomingEventTitle, *.RecentEventTitle, *.SearchFormTable .SearchFormTitle, *.CHFormTitle, *.NCC_Forms_Title, *.BBMembershipFormTitle, *.BBDocumentFormTitle, *.SubscriptionFormTitle, *.BBAnonymousSubscriptionTitle, *.BBVolOpJobListTitle, *.BBVolOpJobDetailTitle, *.PostChannelStoryFormTitle, *.ReportsLandingTable caption, *.SearchJobHeading, *.JobResultsHeading, *.ClassPageHeaderClassName, *.UPMPartEditToolbarTitle, .Ev2_TitleLabel, .Ev2_RegistrationEventTitle, *.myHomeBox th, td[id$=SectionTitle].BBVolOpSignUpCaption, td[id$=InfoTitle].BBVolOpSignUpCaption {
+  font-size:1.25em; /* $h2-font-size */
+}
+  *.SurveyTitle, *.ReportTitle, *.NCC_Forms_Title, *.SearchFormTitle, *.EventCalendarName, *.BBMembershipFormTitle, *.BBDocumentFormTitle, *.DiscussionGroupFormTitle, *.JobBoardFormTitle, *.EventSectionHeader, *.LoginSectionHeader, *.LoginFormTitle, *.DonationListingHeading, *.DonationCaptureListingHeading, *.CalendarFormLegend, *.DirectoryFormTitle, *.CalendarFormLegend, *.ProfileFormTitle, *.DiscussionGroupHeadingCell, *.BBPollsFormTitle, *.NewsChannelFormTitle, *.FRSectionHeader {
+    padding:0.5em 0;
+    margin:0;
+  }
+  *.SurveyTitle {
+    font-size:1em;
+  }
+
+/*** <h3>, minor element headings, and other elements requiring similar emphasis ***/
+h3, *.CalendarFormLegend, *.ListViewDateLabel, *.DetailCaption, *.NewsReaderFormTitle, *.EventItemTitleTime, *.EventItemTitleName, *.EventItemRegistrationsHeader, *.EventItemRegistrantsEventName, *.NewsChannelItemTitle, *.FRSectionHeader, *.FRFieldSetCaption, *.DiscussionGroupHeadingText, *.PostDiscussionReplyHeading, *.PostDiscussionPreviewHeading, *.SurveySubTitle, *.SpellHeading, table.ReportFormTable legend, fieldset .CHFormTitle, *.CalendarViewTopMiddle, *.ReportListingHeading, *.NCC_Forms_Subtitle, *.DiscussionTopicSubject, *.OCCHeader, *.ClassPageHeaderPageName, .Ev2_DateLabel, .Ev2_TimeLabels *, .Ev2_RegistrationEventDate, .Ev2_RegistrationEventTime {
+  font-size:1.1em; /* $h3-font-size */
+}
+  *.SurveySubTitle {
+    font-size:0.92em;
+  }
+
+/*** <h4> and other elements requiring similar emphasis ***/
+h4, *.DetailEventTitle, *.ListViewEventDate, *.ClassPageHeaderTeacherName, *.ClassPageHeaderTeacherEmail {
+  font-size:.9em; /* $body-font-size */
+}
+
+/*** <h5> and other elements requiring similar emphasis ***/
+h5 {
+  font-size:.9em; /* $body-font-size */
+  margin:0;
+}
+
+/*** <h6> and other elements requiring similar emphasis ***/
+h6 {
+  font-size:.9em; /* $body-font-size */
+  margin:0;
+  font-style:italic;
+}
+
+/*    SITE-SPECIFIC-OVERRIDES _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.alternateFontLight { font-family:'EurostileNextW01-Light', 'Play', sans-serif; font-weight:400; letter-spacing:2px; }
+.alternateFontRegular { font-family:'EurostileNextW01-Regula', 'Play', sans-serif; font-weight:normal; letter-spacing:2px; }
+.alternateFontBold { font-family:'EurostileNextW01-SmBd', 'Play', sans-serif; font-weight:700; letter-spacing:2px; }
+
+
+/*---------------------------------------------
+    7.2 Links
+----------------------------------------------*/
+
+a { color:#490513; /* $link-normal-color */ text-decoration:none; }
+a:hover { color:#882345; /* $link-hover-color */  text-decoration:none;}
+a { outline:0; }
+
+#contentPrimary a,
+#contentPrimary a:link {font-weight:bold; }
+#contentPrimary a:hover {text-decoration:underline;}
+
+
+/*---------------------------------------------
+    7.3 Paragraphs
+----------------------------------------------*/
+
+p { font-size:.9em; /* $body-font-size */ line-height:1.75em; /* $body-line-height */ color:#444; }
+
+
+/*---------------------------------------------
+    7.4 Form Fields
+----------------------------------------------*/
+
+input, textarea, select, .mobileMode .checkboxLabel { color:#444; /* $body-copy-color */ padding:5px; border:1px solid #dddddd; /* $medium-gray */    }
+input[type=text]:focus, textarea:focus, select:focus { background-color:#FFFDE0; }
+
+
+/*---------------------------------------------
+    7.5 Lists
+----------------------------------------------*/
+
+ul li, ol li { line-height:1.5em; }
+
+
+/*---------------------------------------------
+    7.6 Blockquotes
+----------------------------------------------*/
+
+
+/*=========================================================================================
+    8. Images
+==========================================================================================*/
+
+.fancyBorder {
+box-shadow:0 0 5px #ccc;
+padding:10px;
+}
+
+img {max-width:100%;}
+.EventCalendarPartContainer img {max-width:700px;}
+
+
+/*=========================================================================================
+    9. Tables
+==========================================================================================*/
+
+
+/*=========================================================================================
+    10. Forms
+==========================================================================================*/
+
+/*---------------------------------------------
+    10.1 Borders
+----------------------------------------------*/
+
+
+/*---------------------------------------------
+    10.2 Header Rows
+----------------------------------------------*/
+
+
+/*---------------------------------------------
+    10.3 Content Rows
+----------------------------------------------*/
+
+
+/*---------------------------------------------
+    10.4 Global div-based Form Styles
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.DCFieldCaption { width:33%; margin-top:0.25em; margin-bottom:0.25em; }
+.BBDivFieldContainer .DCTextboxWide, .BBDivFieldContainer .BBFormTextArea { width:66%; }
+.BBDivFieldContainer .BBFormTextArea { height:50px; }
+.BBDivFieldContainer label.labelForTextarea { line-height:50px; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    10.5 Global Form Styles
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.BBFormCheckListContainer { font-family:inherit; font-weight:700; height:auto; }
+.BBFieldCaption { background-color:transparent!important; font-family:inherit; font-weight:400; vertical-align:middle; padding:0 .5em 0 0; text-align:right; white-space:normal; width:33%; }
+.BBFieldCaption label { font-weight:400; }
+label.BBFieldCaption { padding:0; margin-right:.5em; }
+.BBFieldCheckboxCaption { font-family:inherit; font-weight:400; white-space:nowrap; }
+.BBFieldCheckboxCaption input { margin:0 .25em 0 0; background-color:transparent; }
+.BBFieldControlCell { font-family:inherit; padding:0; }
+.BBFormButtonRow { background:transparent!important; }
+.BBFormCheckbox { font-family:inherit; font-weight:400; }
+.BBFormChecklist { font-family:inherit; font-weight:400; border:0!important; }
+.BBFormErrorMessage { font-family:inherit; color:#882345; /* $validation-text-color */ font-weight:400; }
+.BBFormReadonlyValue { font-family:inherit; font-weight:400!important; font-style:normal!important; white-space:normal; }
+.BBFormRequiredFieldMarker { color:red; padding:0 .25em; font-weight:400; font-size:smaller; text-align:left; }
+.BBFormRequiredFieldMissingText { font-family:inherit; color:#882345; /* $validation-text-color */ font-weight:400; }
+.BBFormSelectList { margin:.25em 0; font-family:inherit; background-color:#fff; }
+table.BBFormSelectList { background-color:transparent; }
+select.BBFormSelectList { background-color:#fff!important; }
+
+/* Button Styling */
+.BBFormSubmitButton, .BBFormSubmitbutton, .BBSequenceMapNavigationButton, .BBEventRegSequenceMapNavigationButton, .BBSequenceMapNavigationNextButton,
+.BBEventRegSequenceMapNavigationNextButton, .mobileMode .checkboxLabel, .mobileMode .chekboxLabel, .mobileMode .radioLabel, .TransactionManagerFilterActions input[id$=btnFilter],
+input.CalendarFilterSaveButton, .CalendarEditButtons, input[id$=btnConfirmPassword], .DiscussionGroupDeleteButtonWAI, .DiscussionGroupPruneButton,
+.DiscussionGroupBlockButton, .DiscussionGroupReplyButtonWAI, .BBDocumentTabButton, .BBDocumentEditButtonWAI, .BBDocumentDeleteButtonWAI     { transition:all 0.5s ease; margin:0.8em; padding:10px 15px; font-family:inherit; font-weight:inherit; width:auto; background-color:#751e3e; /* $button-background-color */ color:#ffffff; /* $text-over-primary-color */ border-width:0; border-radius:0; text-decoration:none; }
+
+.BBFormSubmitButton:hover, .BBFormSubmitbutton:hover, .BBSequenceMapNavigationButton:hover, .BBEventRegSequenceMapNavigationButton:hover, .BBSequenceMapNavigationNextButton:hover,
+.BBEventRegSequenceMapNavigationNextButton:hover, .mobileMode .checkboxLabel:hover, .mobileMode .chekboxLabel:hover, .mobileMode .radioLabel:hover, .TransactionManagerFilterActions input[id$=btnFilter]:hover,
+input.CalendarFilterSaveButton:hover, .CalendarEditButtons:hover, input[id$=btnConfirmPassword]:hover, .DiscussionGroupDeleteButtonWAI:hover,
+.DiscussionGroupPruneButton:hover, .DiscussionGroupBlockButton:hover, .DiscussionGroupReplyButtonWAI:hover, .BBDocumentTabButton:hover,
+.BBDocumentEditButtonWAI:hover, .BBDocumentDeleteButtonWAI:hover { background-color:#872345; /* $button-hover-background-color */ }
+
+.BBFormTable { border:0!important; font-family:inherit; font-weight:400; margin:0 0 1em; padding:0; border-collapse:collapse; clear:both; }
+table.BBFormTable { font-size:.9em; /* $body-font-size */ }
+table.BBFormTable table.BBFormTable { font-size:1em; }
+select.BBFormTable { border:2px inset #fff!important; font-family:inherit; font-size:.9em; /* $body-font-size */ font-weight:400; margin:0; padding:0; border-collapse:separate; clear:both; }
+.BBFormTextArea, select, textarea { font-size:.9em; /* $body-font-size */ font-family:inherit; margin:.25em 0; width:95%; background-color:#fff; }
+.BBFormTextbox, input[type=text] { margin:.25em 0; width:95%; background-color:#fff; font-family:inherit; font-size:.9em; /* $body-font-size */ }
+.BBFormTitle { border:0 none; text-align:left; }
+.BBFormCheckListContainer { overflow:visible; }
+.BBFieldCaption[valign="top"] { vertical-align:top; padding-top:0.25em; }
+
+/* Alternative required styles - custom responsive scripts required for these styles */
+
+.BBFormTable label.required:before, .PaymentPart_FormContainer label.required:before, .Ev2_RegistrationStepContainer label.required:before, span.SurveyQuestion.required:after, span.SurveyAnswerRequiredMessage:after, div[id$="formWizard"] label.required:before { content:url('image/css/required.png'); }
+.BBFormTable .BBFormSelectList.required, .PaymentPart_FormContainer .BBFormSelectList.required, .Ev2_RegistrationStepContainer .Ev2_RegistrantDropDown    { background-position:left center; }
+.BBFormTable .BBFormRequiredFieldMarker, .PaymentPart_FormContainer .BBFormRequiredFieldMarker, .Ev2_RegistrationStepContainer .BBFormRequiredFieldMarker, div[id$="formWizard"] .BBFormRequiredFieldMarker     { display:none; }
+
+
+/*    SITE-SPECIFIC OVERRIDES _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.BBFormSubmitButton, .BBFormSubmitbutton, .BBSequenceMapNavigationButton, .BBEventRegSequenceMapNavigationButton, .BBSequenceMapNavigationNextButton,
+.BBEventRegSequenceMapNavigationNextButton, .mobileMode .checkboxLabel, .mobileMode .chekboxLabel, .mobileMode .radioLabel, .TransactionManagerFilterActions input[id$=btnFilter],
+input.CalendarFilterSaveButton, .CalendarEditButtons, input[id$=btnConfirmPassword] { font-family:'EurostileNextW01-Regula', 'Play', sans-serif; font-weight:bold; font-size:0.75em; text-transform:uppercase; letter-spacing:1px; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+@media only screen and /*!YUI Compressor */ (max-width:768px) {
+
+    td.BBFieldCaption .BBDivFieldCaption { padding-top:15px; }
+    td.BBFieldCaption, td.BBFieldControlCell, td.BBFieldCaption + td, span.BBFieldCaption, .BBDivFieldCaption { display:block; width:100%; text-align:left; }
+    .BBFormTextArea, .BBFormTextbox, input[id$=txtEmailAddress], .BBFormTextbox, input[type=text] { width:100%; }
+    .BBFormTextbox, input[type=text], .BBFormSelectList, input[id$=txtEmailAddress] { padding:0.3em; font-size:16px; }
+    .BBFieldControlCell input[type=checkbox] { display:block; float:left; height:1.5em;}
+    .BBFieldControlCell input[type=checkbox] + label { display:inline-block; float:left; width:auto; }
+    td.BBListingHeading span:first-of-type { display:block; color:#4d4c47; /* $heading-color */ padding-bottom:0.2em; font-weight:normal; border-bottom:1px solid #eeeeee; /* $subtle-border-color */ }
+    input[type=radio] + label { padding-left:5px; }
+    .BBFormTable td select, .BBFormTable td select option { width:100%; }
+    .BBListingHeadingSortedAscending, .BBListingHeadingSortedDescending { background-image:none; }
+
+    /* Checkbox labels and some anchor links converted to buttons */
+
+    .mobileMode .checkboxLabel, .mobileMode .radioLabel { cursor:pointer; display:inline-block; width:auto; background-color:#751e3e; /* $button-background-color */ color:#ffffff; /* $button-text-color */ font-weight:400; }
+    .mobileMode .checkboxLabel.boxChecked, .mobileMode .radioLabel.boxChecked { background-color:#872345; /* $button-hover-background-color */ -moz-box-shadow:inset 0 0 3px #282828; -webkit-box-shadow:inset 0 0 3px #282828; box-shadow:inset 0 0 3px #282828; color:#ddd; }
+
+    .checkboxLabel:before, .radioLabel:before { content: "\2610"; padding-right:8px; }
+    .checkboxLabel.boxChecked:before, .radioLabel.boxChecked:before { content: "\2611"; }
+
+    input[type=radio] { display:none; }
+
+    .LoginFormTable .BBFieldControlCell label[for$=cbRememberLogin] { float:none; }
+    .SubscriptionFormTable .SubscriptionFormCheckList label[for*=cblNewsLetters],
+    .SubscriptionFormTable .Ev2_AttributeCheckList label[for*=cblAttribute] { width:100%; margin-bottom:10px; }
+    .EventTable input[type=checkbox] + label, .PaymentPart_FormContainer input[type=checkbox] + label { display:inline-block; margin-bottom:10px; }
+
+    .SubscriptionFormTable .SubscriptionFormCheckList label[for*=cblNewsLetters].boxChecked:before,
+    .SubscriptionFormTable .Ev2_AttributeCheckList label[for*=cblAttribute].boxChecked:before { float:left; padding-left:0; padding-right:0px; margin-left:-20px;    }
+
+    .SubscriptionFormTable .SubscriptionFormCheckList label[for*=cblNewsLetters],
+    .SubscriptionFormTable .Ev2_AttributeCheckList label[for*=cblAttribute] { padding-left:25px; }
+
+    .DonationFormTable input[type=checkbox],
+    .LoginFormTable input[type=checkbox],
+    .SubscriptionFormTable input[type=checkbox],
+    .PaymentPart_FormContainer input[type=checkbox] { display:none; }
+
+}
+
+
+/*---------------------------------------------
+    10.6 Validation
+----------------------------------------------*/
+
+.BBFormValidatorSummary { font-family:inherit; color:#882345; /* $validation-text-color */ font-weight:400; padding:15px; margin-bottom:1em; background-color:#efefef; border-width:0 }
+.BBFormValidatorSummary ul { color:#333333; /* $dark-gray */ list-style-type:square; }
+.BBMessage { color:#882345; /* $validation-text-color */ }
+
+
+/*=========================================================================================
+    11. Other Global Class and ID Definitions
+==========================================================================================*/
+
+
+/*---------------------------------------------
+    11.1 Global Classes
+----------------------------------------------*/
+
+img.imageLeft { float:left; padding:0 10px 10px 0;}
+img.imageRight { float:right; padding:0 0 10px 10px; }
+
+
+/*---------------------------------------------
+    11.2 Replication Classes & ID's
+----------------------------------------------*/
+
+
+/*=========================================================================================
+    12. Specific Part Styles
+==========================================================================================*/
+
+/*---------------------------------------------
+    Alumni Class Notes
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Anonymous Newsletter Subscription
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.BBAnonymousSubscriptionCaption { white-space:nowrap; padding:0 .5em 0 0!important; }
+.BBAnonymousSubscriptionControlCell { padding:.25em 0!important; }
+.BBAnonymousSubscriptionButtonCell { padding:1em 0 0!important; }
+.BBAnonymousSubscriptionFormTable { margin:0 0 1em; }
+.BBAnonymousSubscriptionFormTable table { border-collapse:collapse; }
+.BBAnonymousSubscriptionFormTable td { padding:0; }
+#contentSidebar .BBAnonymousSubscriptionFormTable { margin:1em 0; }
+.BBAnonymousSubscriptionTitle { font-family:inherit; padding:0; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Chapter Manager
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.CHDashBoardSectionHeading { color:#fff; font-family:inherit; font-size:1em; font-weight:700; padding:.25em; white-space:nowrap; }
+.CHDashBoardSection { border:0 none; font-size:1em; }
+.CHDashBoardSection textarea,.CHDashBoardSection input { width:auto!important; }
+.CHDashBoardSection table fieldset legend { color:#000; font-weight:700; font-size:1em; }
+.CHDashBoardSection table fieldset table td,.CHDashBoardSection table fieldset table table table td { white-space:normal!important; }
+.CHDashLink { font-size:1em; }
+.CHFormTable .CHDashLink { margin:0 1em 0 0; }
+.CHDashLink:link { font-size:1em; }
+.CHDashLink:visited { font-size:1em; }
+.CHDashLink:hover { font-size:1em; }
+.CHDashLink:active { font-size:1em; }
+.CHDashSubHeading { font-size:1em; }
+.CHButtonText { padding:0 3em 0 0; border-right:0 none; }
+.CHButtonTextActive { display:block; }
+.CHButton { padding:0 3em 0 0; border-right:0 none; }
+.CHFieldSetCaption { font-size:1.25em; font-weight:400; color:#333; display:block; margin:1em 0 0; }
+.CHFieldSetCaption span,span.CHFieldSetCaption { font-family:inherit; font-weight:400; font-size:1.25em; }
+.CHCommentsFieldSet .CHFieldSetCaption { color:#333; display:block; font-family:inherit; font-size:1.25em; font-weight:400; margin:0; padding:0; }
+.CHText { font-size:1em; white-space:nowrap; }
+.CHSubmitButton { margin:0 auto .25em; }
+.CHFormTable table { background-color:transparent!important; }
+.CHFormTable fieldset div { background-color:#e2e2e2; border:1px solid #666; display:block; overflow:auto; width:680px; }
+.CHFormTable fieldset div table { background-color:transparent!important; }
+.CHFormTable fieldset div div { width:auto; display:block; overflow:auto; border:0 none; background-color:transparent; }
+.CHFormTitle { padding:.5em 0 .35em; }
+fieldset .CHFormTitle { padding:.5em 0 .35em; font-size:1em; color:#000; font-family:inherit; }
+.CHEvenRowStyle td table td { border:0 none; width:auto!important; }
+.CHEvenRowStyle td { background-color:transparent; border:0 none; padding:.25em 0; }
+.CHEvenRowStyle td span { text-align:left; width:100%; }
+.CHListingHeading { background-color:transparent; color:#000; }
+.CHListingHeading td { border-collapse:collapse; font-size:1em; padding:.25em; }
+.CHOddRowStyle td table td { border:0; }
+.CHOddRowStyle td { background-color:transparent; border:0 none; padding:.5em 0; }
+.CHOddRowStyle td span { text-align:left; width:100%; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Change User ID/Password
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Directory
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.BBListingHeading { background-color:#882345; color:#fff;}
+.fh .BBListingHeading { background-color:#47AA42; }
+.BBListingHeading a { color:#ffffff; padding:1em 0; }
+.DirectorySearchForm { width:100%; margin:0 auto; }
+.DirectoryFieldCaption { width:auto; padding-left:.5em; }
+.DirectoryFieldControlCell { width:auto; }
+.DirectoryFormButtonCell { padding:1em 0 2em 0; }
+.DirectoryPagingButton { width:auto; margin:.5em .25em; }
+.DirectoryFormTable { width:100%; }
+.DirectoryFormTextBox { width:90%; }
+.DirectoryListingHeading { padding:.5em 2em .5em .5em; border:0 none; }
+.DirectoryListingItem { padding:.5em 2em .5em .5em; border-bottom:1px dotted #aaaaaa; /* $normal-border-color */ white-space:normal!important; text-align:left!important; }
+.DirectoryListingTable { width:100%; margin:1em 0; }
+.DirectoryListingTable td { text-align:left; }
+div[id*=directoryOutputGridView_Results] { text-align:center; font-size:.9em; /* $body-font-size */ }
+div[id$=directoryOutputGridView_ResultsAbove]xxx { margin-top:6em; position:absolute; width:100%; }
+div[id$=directoryOutputGridView_ResultsBelow]xxx { margin-top:-2.5em; }
+span[id$="directoryOutputGridView_myGridView_lblEmptyDataRow"] {text-align:left;}
+
+.DirectoryListingTable > tbody > tr:nth-child(even) { background-color:#eeeeee; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+@media only screen and /*!YUI Compressor */ (max-width:767px) {
+
+    .DirectoryFormButtonCell { padding-bottom:0; }
+    tr[id$="trDirectoryCriteria"] + tr { display:none; }
+
+}
+
+@media only screen and /*!YUI Compressor */ (max-width:600px) {
+
+    .DirectoryListingTable tr th, .DirectoryListingTable tr td { width:33%; padding-right:0; }
+
+}
+
+
+/*---------------------------------------------
+    Discussion Group
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.DiscussionGroupHeadingCell { background-color:transparent; padding:1em 0; width:100%; }
+.DiscussionGroupHeadingText, .DiscussionMessageNew, .PostDiscussionPreviewHeading, .PostDiscussionReplyHeading, .PostDiscussionReplyLegend, .PostDiscussionTopicHeading, .PostDiscussionTopicLegend, .DiscussionGroupFormTitle { font-size:1em; font-family:inherit; }
+.DiscussionGroupSearchTextCell { vertical-align:middle; }
+.DiscussionGroupSpellButtonWAI { background:url(images/CheckSpelling.gif) no-repeat; border-style:none; border-width:0; height:14px; padding:0; width:79px; text-indent:-9999px; }
+.DiscussionMessageSepHR { color:#c0ceed; margin:1em auto; padding:0; width:80%; }
+.DiscussionReplyBody { white-space:normal; }
+.DiscussionReplyFieldValue { font-family:inherit; font-size:1em; white-space:normal; }
+.DiscussionReplyBody .DiscussionReplyBody .DiscussionReplyFieldValue { display:block; padding:1em 2em; }
+.DiscussionReplyHeading { color:#333; font-family:inherit; font-weight:400; font-size:1em; padding:0; height:auto; }
+.DiscussionReplySubject { font-size:1em; font-weight:700; }
+.DiscussionReplyTable { margin:0 0 1em; border-collapse:collapse; }
+.DiscussionThreadLBracket, .DiscussionThreadRBracket, .DiscussionThreadTBracket { display:block; }
+.DiscussionTopicBody { white-space:normal; background-color:transparent; padding:0; }
+.DiscussionTopicBody table { border-collapse:collapse; width:100%; }
+.DiscussionTopicFieldValue { font-family:inherit; font-size:1em; white-space:normal; display:block; padding:1em 0; }
+.DiscussionTopicBody table.w100p .DiscussionTopicFieldValue { display:inline; padding:0; }
+.DiscussionTopicHeading { background-color:transparent; height:auto; color:#000; font-family:inherit; font-weight:700; font-size:1em; padding:.25em; }
+.DiscussionTopicList, .DiscussionTopicNumReplies, .PostDiscussionPreviewLegend, .DiscussionFilterFieldCaption, .PostDiscussionPreviewFormTable, .PostDiscussionReplyFormTable, .PostDiscussionTopicFormTable, .DiscussionThreadList { font-family:inherit; font-size:1em; }
+.DiscussionTopicListHeader { color:#333; font-family:inherit; font-weight:700; font-size:1em; }
+.DiscussionTopicListHeader td { padding:.5em; }
+.DiscussionTopicSepHR { color:#333; margin:1em auto; padding:0; width:80%; }
+.DiscussionTopicSubject { color:#333; font-family:inherit; font-size:1em; font-weight:700; }
+.DiscussionTopicTable { margin:0 0 .5em; }
+.PostDiscussionPreviewHeadingCell, .PostDiscussionReplyHeadingCell, .PostDiscussionTopicHeadingCell { background-color:transparent; }
+.DiscussionReplyFieldCaption, .DiscussionTopicFieldCaption, .PostReplyFieldCaption, .PostTopicFieldCaption { font-family:inherit; font-size:1em; font-weight:400; }
+.DiscussionGroupButtonCell { padding:.5em 0; }
+.DiscussionGroupSpellButtonWAI { background-color:transparent; color:#283587; text-decoration:none; font-weight:700; }
+.DiscussionGroupSearchTextbox { width:280px; }
+.DiscussionTopicsEvenRowStyle td, .DiscussionTopicsOddRowStyle td { padding:.5em .5em .5em .25em; white-space:normal!important; vertical-align:top; }
+.DiscussionGroupMessage { font-family:inherit; font-size:1em; font-weight:400; padding:1em 0 0; }
+.DiscussionGroupDeleteButtonWAI, .DiscussionGroupPruneButton, .DiscussionGroupBlockButton, .DiscussionGroupReplyButtonWAI { margin:0; }
+.DiscussionGroupPruneButton, .DiscussionGroupBlockButton, .DiscussionGroupReplyButtonWAI { padding-top:5px; padding-bottom:5px; }
+.DiscussionGroupDeleteButtonWAI:hover, .DiscussionGroupPruneButton:hover, .DiscussionGroupBlockButton:hover, .DiscussionGroupReplyButtonWAI:hover { color:#ffffff; /* $text-over-primary-color */ text-decoration:none; }
+.DiscussionTopicLink:link { color:#490513; /* $link-normal-color */ }
+.DiscussionGroupButtonCell { padding:0; }
+.DiscussionTopicBody table.w100p .DiscussionTopicFieldValue, .DiscussionMessageNew { vertical-align:middle; }
+.DiscussionSearchPostDate { font-size:13px; }
+.DiscussionSearchList tr td { padding:5px 10px; }
+.DiscussionSearchHeader td { background-color:#872345; /* $primary-color */ color:#ffffff; /* $text-over-primary-color */ }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+@media only screen and /*!YUI Compressor */ (max-width:767px) {
+
+    .DiscussionGroupButtonCell { padding-top:0; }
+    .DiscussionGroupButtonCell > input { margin-top:0; }
+
+    .DiscussionTopicListHeader { display:none; }
+    .DiscussionTopicList tr td { display:block; float:left; width:100%; margin:0; padding:0 0 0 10px; }
+    .DiscussionTopicList tr td:first-of-type { padding-top:10px; }
+    .DiscussionTopicList tr td:nth-child(2):before { content:"Posted by:"; }
+    .DiscussionTopicList tr td:nth-child(3):before { content:"Replies:"; }
+    .DiscussionTopicList tr td:nth-child(4) { padding-bottom:10px; }
+    .DiscussionTopicList tr td:nth-child(4):before { content:"Posted On:"; }
+    .BBListOddRowStyle.DiscussionTopicsOddRowStyle > td:last-child, .BBListEvenRowStyle.DiscussionTopicsEvenRowStyle > td:last-child { float:none; position:absolute; right:0; width:auto; }
+    table.DiscussionTopicList { padding:10px; }
+
+    span.DiscussionTopicFieldCaption, span.DiscussionTopicFieldValue { display:inline; }
+
+}
+
+@media only screen and /*!YUI Compressor */ (max-width:500px) {
+
+    .DiscussionGroupHeadingCell table td { display:block; text-align:left; }
+    tr.DiscussionTopicBody table tr:nth-child(2) td { display:block }
+    tr.DiscussionTopicBody table tr:nth-child(2) td:nth-child(3), tr.DiscussionTopicBody table tr:nth-child(2) td:nth-child(4), tr.DiscussionTopicBody table tr:nth-child(2) td:nth-child(5) { width:auto; float:left; text-align:left; }
+
+}
+
+@media only screen and /*!YUI Compressor */ (max-width:450px) {
+
+    .DiscussionSearchList tr td { display:block; }
+    .DiscussionSearchPostDate:before { content:"Post Date:"; }
+    .DiscussionSearchHeader { display:none; }
+
+}
+
+
+/*---------------------------------------------
+    Documents
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.BBDocumentDisplayDescriptionStyle { font-style:normal; font-size:.92em; }
+.BBDocumentDisplayDescriptionStyle td { padding:0 0 0 3em!important; }
+.BBDocumentDisplayHeaderRow td { padding:.5em; background-color:#872345; /* $primary-color */ color:#ffffff; /* $text-over-primary-color */ }
+.BBDocumentDisplayHeaderRow td a { color:#ffffff; /* $text-over-primary-color */ }
+.BBDocumentDisplayTable { margin:1em 0; }
+.BBDocumentTabButtons { padding:0; text-align:right; }
+.BBDocumentAddDescription { font-size:1em; }
+.BBDocumentDisplayEvenRowStyle td { padding:.5em; }
+.BBDocumentDisplayOddRowStyle td { padding:.5em; }
+.BBDocumentEditButtonWAI, .BBDocumentDeleteButtonWAI { padding-top:0; padding-bottom:0; margin:0; }
+.BBDocumentTabButton:hover, .BBDocumentEditButtonWAI:hover, .BBDocumentDeleteButtonWAI:hover { text-decoration:none; color:#ffffff; /* $text-over-primary-color */ }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+@media only screen and /*!YUI Compressor */ (max-width:500px) {
+
+    .BBDocumentDisplayTable tr td { display:block; padding:0 10px; }
+    .BBDocumentDisplayTable tr td:nth-child(4), .BBDocumentDisplayTable tr td:nth-child(5) { position:absolute; width:auto; right:0; margin-right:0; margin-top:-55px; }
+    .BBDocumentDisplayTable tr td:nth-child(5) { margin-top:-20px; }
+    .BBDocumentDisplayHeaderRow { display:none; }
+    .BBDocumentDisplayTable .Owner:before { content:"Owner:"; }
+    .BBDocumentDisplayTable .UploadDate:before { content:"Upload Date:"; }
+    .BBDocumentDisplayDescriptionStyle td:first-of-type { padding-left:10px; font-style:italic; }
+    .BBDocumentTabButtons { text-align:left; }
+    .BBDocumentTabButtons a { margin-left:0; }
+
+}
+
+
+/*---------------------------------------------
+    Donation Form
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.DonationCaptureFieldControlCellAmount { font-size:.9em; /* $body-font-size */ width:auto; }
+.DonationCaptureFieldControlCellAmount .BBFieldCaption { vertical-align:top; }
+.DonationFieldCaption { background:transparent; white-space:normal; }
+label.DonationFieldCaption { display:block; }
+.DonationFieldCheckboxCaption { display:block; padding:.5em 0; }
+.DonationFieldCheckboxCaption label { font-weight:400; }
+.DonationCaptureFieldControlCell { width:auto; }
+.DonationCaptureFieldControlCell table { width:auto!important; margin:0!important; }
+.DonationCaptureFieldControlCell table td { padding:0; }
+.DonationCaptureFieldControlCell table { width:auto!important; margin:0!important; }
+.DonationCaptureFieldControlCell table td { padding:0; }
+.DonationCaptureFieldControlCell label { vertical-align:middle; font-weight:400; margin:0 .5em 0 0; }
+.DonationCaptureFieldControlCell input { vertical-align:middle; margin-right:.5em; }
+.DonationFieldControlCell { width:auto; }
+.DonationFieldControlCell label { font-weight:400; vertical-align:middle; }
+.DonationFieldControlCell input { vertical-align:middle; margin-right:.25em; }
+.DonationFormTable table .DonationFieldControlCell, .DonationFormTable table[id$=rdoGiftType] td { padding:.25em .5em 0.5em 0; }
+label[for$=rdoOther] { display:none; }
+.DonationButtonCell { text-align:center; padding:1em 0 0; }
+.DonationCaptureReadonlyValue { font-size:.9em; /* $body-font-size */ }
+.DonationCaptureRequiredFieldMarker { width:15%; }
+.DonationRequiredFieldMarker { width:15%; }
+.DonationCaptureSelectList { white-space:nowrap; width:auto; }
+.DonationCaptureSelectListNarrow { width:auto; }
+.DonationSelectList { width:auto; }
+.DonationGridEvenRow .DonationSubmitButton,.DonationGridOddRow .DonationSubmitButton { margin:0; }
+.DonationFormTable { width:100%; margin:0; }
+.DonationFormTable table { border-collapse:collapse; width:auto; margin:0!important; border-color:#fff; border-style:solid; border-width:0; }
+.DonationFormTable table td { border-color:#fff; border-style:solid; border-width:0; }
+.DonationFormTable label.BBFieldCaption { display:block; text-align:left; margin:.5em 0; }
+.DonationFormTable .vaTop { vertical-align:middle; }
+.DonationTextboxNarrow { margin:0; width:180px; }
+.DonationGridFooter td { vertical-align:top; padding:.25em; border-color:#fff; }
+.DonationGridHeader td { font-weight:700; vertical-align:top; border-color:#fff; }
+.DonationGridEvenRow td { vertical-align:top; padding:.25em; border-color:#fff; }
+.DonationListingHeading, .DonationCaptureListingHeading { text-align:left; border:0 none; background:transparent; height:auto; font-size:.9em; /* $body-font-size */ padding:1em 0 0.5em; margin:0; }
+.DonationGridOddRow td { vertical-align:top; padding:.25em; border-color:#fff; }
+.DonationMessage { padding:0 0 10px 0; }
+img.ui-datepicker-trigger { margin-left:-33px; }
+.labelRecurrenceStartingOn, .emptyTDBelowOnLabel { display:none; }
+input[id$=txtCSC] { width:100px; }
+img[cssclass="BBLinkHelpIconImg"] { display:none; }
+table[id*="_rdoGiftType"] tr { display:inline; float:none; }
+table[id*="_rdoGiftType"] tr label[for*="rdoGiftType"] { margin:0 .5em 0 0; }
+.DonationFormTable > tbody > tr > td { padding-bottom:0.5em; }
+.DonationFormTable .emptyTD { padding:0; }
+.DonationFormTable .BBLinkHelpIcon:after { content:"what's this"; }
+
+.DonationGrid .DonationGridHeaderCell:nth-child(2),
+.DonationGrid .DonationGridCell:nth-child(2) {padding-left:10px;}
+.DonationGrid .DonationGridFooter .DonationGridCell:nth-child(1) {text-align:right;}
+
+.DonationFormTable input[id*="_dgCart_txtDesAmount_"] {width:100px; text-align:right;}
+.DonationFormTable .DonationGridCell:nth-child(1) {text-align:right;}
+
+#PC2448_TB_pnlDonation .givingAmount.radioLabel {display:none;}
+#PC2448_trOther table {margin-left:-59px!important;}
+
+.breadcrumbs li a[href*="GiveNow"] {display:none;}
+
+.tributeInfo td {padding-right:.5em;}
+
+/* Matching Gift Popup */
+#divModalPage .AdminModalTitle { height:auto; padding:10px; }
+#divModalPage #divContentPane { position:static; padding:5px 18px; }
+.MatchFinderMessage { color:#666666; /* $body-copy-color */ line-height:1.5em; }
+tr[class*="MatchFinder"] > td { text-align:left; }
+tr[class*="MatchFinder"] > td > a { font-size:1.5em; line-height:1.5em; }
+.MatchFinderResultsList [class$="RowStyle"] { background-color:transparent; border-bottom-width:0; }
+.MatchFinderFormTable div.w100p { border-width:0!important; height:auto!important; }
+.MatchFinderFormTable input.BBFormSubmitButton { width:auto!important; }
+body#myBody[onload*="doLoad"], body#myBody[onload*="doLoad"] form#Form1 { overflow:visible; }
+div#divModalPage.page { position:static; }
+span[id$="lblTxtMatchFinderMessage1"] br { display:none; }
+
+input[id$="_txtInstallments"] {width:50px; vertical-align:text-bottom;}
+.limitmessage {color:#882345;}
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+@media only screen and /*!YUI Compressor */ (max-width:768px) {
+
+    /* General form elements */
+    td.DonationFieldCaption + td { display:block; width:100%; text-align:left;}
+    div[id$=pnlDonationForm] td.emptyTD { display:none; }
+    td.DonationFieldCaption, td.DonationCaptureFieldCaption { margin-top:0.7em; }
+
+    /* Giving Levels */
+    table[id$=tblAmount] td { display:table-cell; width:auto; }
+    table[id$=rdoGiftType] tr { display:block; float:left; padding-right:15px;}
+    td.DonationFieldControlCell.givingAmountInputTD input, td.DonationFieldControlCell.givingAmountInputTD { display:none; }
+    td.DonationFieldControlCell.givingAmountInputTD input, td.DonationFieldControlCell.givingAmountInputTD label { display:none; }
+    .mobileMode .radioLabel { display:inline-block; line-height:normal; margin:0.2em auto; }
+    tr[id$="trOther"] td[id$="tdOther"] { display:inline-block; }
+    tr[id$="trOther"] td[id$="tdOther"] label.givingAmount { display:inline-block; }
+    td[id$="tdOther"] + td.DonationFieldControlCell { display:none; }
+    td[id$="tdOther"] + td.DonationFieldControlCell.checked { display:inline-block; }
+    td[id$="tdOther"] + td.DonationFieldControlCell td[id$="Td1"] { display:table-cell; }
+    div[id$="pnlDonationForm"] tr[id$="trOther"] td.emptyTD:not(.DonationFieldControlCell) { display:table-cell; }
+    div[id$="pnlDonationForm"] tr[id$="trOther"] input[id$="txtAmount"] { margin:0 0 0 3px; height:2.3em; }
+#PC2448_TB_pnlDonation .givingAmount.radioLabel {display:block;}
+#PC2448_trOther table {margin-left:5px!important;}
+
+    /* Recurrence */
+    td[id$=tdFrequencyCaption] + td > table { width:100%; }
+    label[id$=lblTxtEnding] { white-space:pre; }
+    .BBFormTable td[id$=FrequencyCaption] { width:auto; }
+    select[id$=Recurrence_ddlFrequency] { display:block; float:left; }
+    tr [id$=Recurrence_trRange] input[id$=DatePickerStart],
+    tr [id$=Recurrence_trRange] input[id$=DatePickerEnd] { display:block; float:left; }
+    label[id$=Recurrence_lblTxtOnWeek],
+        label[id$=Recurrence_lblTxtOnMonthlyQuarterly],
+        label[id$=Recurrence_lblTxtOnMonth],
+        label[id$=Recurrence_lblTxtStarting],
+        label[id$=Recurrence_lblTxtEnding]    { display:block; float:left; width:90px; padding-top:15px; }
+    select[id$=Recurrence_ddlDayOfWeek1] { display:block; float:left; }
+    select[id$=Recurrence_ddlDayOfWeek1], .BBFormTable tr[id$=trMonthlyQuarterly] td.DonationFieldControlCell select[id*=Recurrence_ddlDayNumber]  { width:auto; }
+    .DonationFormTable td select[id$=Recurrence_ddlPosition],
+        .DonationFormTable td select[id$=Recurrence_ddlPosition] option,
+        .DonationFormTable td select[id$=Recurrence_ddlDayOfWeek2],
+        .DonationFormTable td select[id$=Recurrence_ddlDayOfWeek2] option,
+        .DonationFormTable td select[id$=Recurrence_ddlMonth],
+        .DonationFormTable td select[id$=Recurrence_ddlMonth] option,
+        .DonationFormTable td select[id$=Recurrence_ddlDayNumber1],
+        .DonationFormTable td select[id$=Recurrence_ddlDayNumber1] option { width:auto; }
+    label[id$=lblTxtEnding] { clear:both; }
+    img.ui-datepicker-trigger { display:block; float:left; margin-left:-2.1em; }
+    div[id$=Recurrence_divFrequency] { clear:both; }
+    div[id$=Recurrence_divFrequency] > table { width:100%; }
+    div[id$=Recurrence_divFrequency] td { padding-top:10px; }
+    .DonationFormTable label[id$=Recurrence_lblTxtStarting], label[id$=Recurrence_lblTxtEnding] { padding-top:7px; margin-top:0; }
+    img.ui-datepicker-trigger[title^=Start] { margin-top:8px; }
+    tr [id$=Recurrence_trRange] input[id$=DatePickerEnd] { margin-top:15px; }
+    label[id$=Recurrence_lblTxtEnding] { padding-top:12px; }
+    img.ui-datepicker-trigger[title^=End] { margin-top:23px; }
+
+    /* Recurrence - Requires classes added by responsive scripts */
+    .labelRecurrenceStartingOn, .emptyTDBelowOnLabel { display:none; }
+    .DonationFormTable .radioRecurrenceDay, .DonationFormTable .inputDayOfMonth, .DonationFormTable .radioRecurrenceDayFrequency,
+    .DonationFormTable .inputRecurrenceDayFrequency, .DonationFormTable .annualRecurrenceTD { display:table-cell; }
+    .DonationFormTable table .radioRecurrenceDay, .DonationFormTable table .radioRecurrenceDayFrequency { padding-right:6px; }
+
+    /* Tributes */
+    #tributeCheckbox, .tributeLabel { display:block; float:left; margin-top:15px; }
+    #tributeCheckbox { height:1.5em; }
+
+    /* Payment Method */
+    table[id$=rdoPaymentOption] label.radioLabel { margin-right:1em; }
+
+    /* Billing info */
+    .DonationFormTable select[id$=cboYear] { margin-left:20px; }
+    .DonationFormTable input[id$=txtCSC] { width:50%; }
+    .DonationFormTable a[id$=lnkcsc_help] img { display:none; }
+
+    /* Checkboxes */
+    .DonationFieldCheckboxCaption { padding:0; }
+    .DonationFieldCheckboxCaption label.checkboxLabel { margin-left:0; }
+
+}
+
+@media only screen and /*!YUI Compressor */ (max-width:500px) {
+
+    tbody[id$=tbdyMatchingGifts] > tr > td.DonationCaptureFieldControlCell td { display:block; }
+
+}
+
+
+/*---------------------------------------------
+    eCards
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.ECardWizardSubheading { margin-bottom:1em; }
+.ECardSection th[scope=col] { text-align:left; }
+.ECardSectionSeparator { border:1px solid #aaa; color:#fff; font-family:inherit; font-size:1em; font-weight:700; padding:.25em; width:auto; }
+.ECardPreviewBlock { border:0 none; margin:.5em 0; padding:.5em; }
+.ECardPreviewBlock table { width:auto!important; }
+.ECardPreviewBlock span[id$=lblPreviewFromCaption],.ECardPreviewBlock span[id$=lblPreviewToCaption],.ECardPreviewBlock span[id$=lblPreviewSubjectCaption],.ECardPreviewBlock span[id$=lblFinalPreviewFromCaption],.ECardPreviewBlock span[id$=lblFinalPreviewToCaption],.ECardPreviewBlock span[id$=lblFinalPreviewSubjectCaption],.ECardPreviewBlock span[id$=lblSubjectCaption] {
+    padding-right:.5em;
+    text-align:right;
+    font-weight:700;
+    width:60px;
+}
+.ECardThumbnail { border:0 none; margin-bottom:1em; margin-left:0; margin-right:1em; padding:0; text-align:center; vertical-align:middle; opacity:.75; }
+.ECardCurrentStep { background-color:transparent; border:0 none; border-bottom:3px solid #000; color:#000; font-family:inherit; font-size:1em; font-weight:700; height:auto; line-height:normal; padding:.5em 1%; margin:0; text-align:center; white-space:nowrap; }
+.ECardPastStep { background:transparent url(images/wizardgreencheck.gif) no-repeat scroll 90% 50%; border:0 none; border-bottom:3px solid #ccc; color:#ccc; font-family:inherit; font-size:1em; font-weight:700; height:auto; line-height:normal; padding:.5em 1%; margin:0; text-align:center; white-space:nowrap; }
+.ECardFutureStep { background:transparent none repeat scroll 0 0; border:0 none; border-bottom:3px solid #ccc; color:#999; font-family:inherit; font-size:1em; font-weight:700; height:auto; line-height:normal; padding:.5em 1%; margin:0;       text-align:center; white-space:nowrap; }
+.ECardThumbnail:hover { opacity:1; border:0 none; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Email Forwarding Form
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.MailForwardingFormTable { border:0; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Event Calendar
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.CalendarViewCalendarContainer { display:none; }
+.desktopMode .CalendarViewCalendarContainer, .tabletMode .CalendarViewCalendarContainer { display:table; }
+
+.CalendarViewEventItemContainer { margin:.5em 0 .5em .5em; }
+.CalendarViewCalendarContainer { margin:1em 0!important; border:1px solid #b8b799; }
+.CalendarViewBottomIcons { text-align:left; }
+.ListViewDateLabel { color:#333; display:block; font-family:inherit; font-size:.9em; /* $body-font-size */; font-weight:400; height:auto; margin:1em 0 0; }
+.ListViewEventItemContainer { font-size:.9em; /* $body-font-size */; }
+.ListViewEventItemContainer div { padding:0 0 1em!important; }
+.CalendarViewMonthYearLabel { height:auto; line-height:1em; vertical-align:top; font-size:.9em; /* $body-font-size */ }
+.CalendarViewDayHeader { background-color:#872345; /* $primary-color */ color:#FFF; height:auto; padding:.75em; text-transform:uppercase; text-align:center; font-size:.9em; /* $body-font-size */ font-family:inherit; }
+.CalendarViewOtherMonthDay { background-color:#cccccc; border:1px dashed #b8b799; border-top:0 none; color:#333; height:100px; text-align:right; }
+.CalendarViewWeekendDay { height:100px; border:1px dashed #b8b799; border-top:0 none; background-color:#FFF; text-align:right; }
+.CalendarViewDay { height:100px; border:1px dashed #b8b799; border-top:0 none; background-color:#FFF; text-align:right; }
+.ListViewDateRangeGoButton { margin:0 0 0 .6em; }
+.ListViewEventDate { color:#333; display:block; font-family:inherit; font-size:.9em; /* $body-font-size */; font-weight:700; margin:0 0 1em; }
+.ListViewEventTitle { color:#000; font-family:inherit; font-size:.9em; /* $body-font-size */; font-weight:700; text-align:left; text-transform:none; }
+.ListViewEventSubtitle { font-style:italic; color:#333; display:block; font-family:inherit; font-size:.9em; /* $body-font-size */; font-weight:400; margin:0 0 0 1em; vertical-align:top; }
+.ListViewEventTime { display:block; font-size:.9em; /* $body-font-size */; font-weight:700; margin:0 0 0 1em; }
+.ListViewEventLocation { font-size:.9em; /* $body-font-size */; display:block; font-weight:700; margin:0; }
+.EventCalendarName { font-weight:400; font-size:22px; text-align:left; display:block; white-space:nowrap; }
+.DetailEventTitle { text-align:left; font-family:inherit; font-weight:700; font-size:.9em; /* $body-font-size */; }
+.DetailEventSubtitle { color:#333; font-family:inherit; font-weight:400; font-size:.9em; /* $body-font-size */; font-style:normal; }
+.DetailCaptionContainer { background-color:transparent; border-bottom:1px solid #aaa; padding:.5em 0; }
+.DetailCaption { font-size:18px; color:#000; }
+.CalendarViewToday { background-color:#eeeeee; border:1px dashed #b8b799; color:#333; font-weight:700; text-align:right; }
+.CalendarViewAllDayEvent { border:0; }
+.CalendarFilterContainer span.CalendarFilterSaveMsg { display:none; margin-bottom:0; }
+.CalendarFilterContainer span { display:block; margin-bottom:0; overflow:hidden; }
+.CalendarFilterContainer label { display:block; float:left; padding:2px; }
+.CalendarFilterContainer input[type=checkbox] { float:left; clear:left; height:24px; /* $checkbox-line-height */; margin-right:10px; /* $checkbox-to-label-spacing */; }
+.CalendarFilterContainer input[type=checkbox] + label { padding:0; }
+.EventCalFilter_Show { border:0 none!important; display:block!important; padding:1em!important; position:relative!important; }
+.CalendarFilterSaveButton { color:#000; font-size:12px; width:100px; }
+.CalendarFilterHorizontalDividers { clear:both; }
+.EventCalendarPartContainer table { border-collapse:collapse; margin:auto; }
+.EventCalendarPartContainer table table { margin:.25em 0; }
+table[id$=CalendarEvent1_rblMapLink] { margin-bottom:.5em; }
+.EventCalFilter_Show,.EventCalFilter_Hide { border:0 none; padding:0; font-size:.9em; /* $body-font-size */; /* $body-font-size */ }
+span[id$=lblCalName] { display:block; padding:0; font-weight:700; }
+.ListViewTopLeft { border-bottom:0 none; }
+.ListViewTopRight { border-bottom:0 none; text-align:right; vertical-align:top; }
+td.ListViewTopGap .BBFormTextbox { margin:0 0 .25em; }
+td.ListViewTopGap { font-weight:700; }
+.ListViewEventDivider { font-size:.9em; /* $body-font-size */ display:block; margin:0 0 1em 1em; }
+.CalendarViewContainer { font-size:.9em; /* $body-font-size */ }
+.CalendarViewTopLeft { font-weight:700; padding:0; }
+.CalendarViewTopMiddle { text-align:center!important; vertical-align:middle; width:30%; }
+.CalendarViewTodayText { display:block; padding:0 0 0 6px; }
+.CalendarFilterSaveContainer input { display:inline; float:right; }
+.CalendarEventRecurMsg { padding:0; }
+.CalendarEventRecurContainer { border:0 none; }
+.CalendarFormCategoryContainer { border-collapse:collapse; width:85%; }
+.CalendarFormCategoryContainer td { padding:0; }
+.CalendarFormCategoryContainer input,.CalendarFormCategoryContainer select,.CalendarFormCategoryContainer textarea { margin:.25em 0; }
+.CalendarFormCategoryContainer label { margin:0 .5em 0 0; }
+.CalendarFormDateTimeContainer { border-collapse:collapse; width:100%; }
+.CalendarFormDateTimeContainer table { margin:0; }
+.CalendarFormDateTimeContainer td { padding:0; }
+.CalendarFormDateTimeContainer input,.CalendarFormDateTimeContainer select,.CalendarFormDateTimeContainer textarea { margin:.25em 0; width:auto; }
+.CalendarFormDateTimeContainer .BBFormTextbox { margin-right:.25em; }
+.CalendarFormDateTimeContainer img { vertical-align:middle; }
+.CalendarFormDateTimeContainer label { margin:0 .5em 0 0; }
+.CalendarFormOptionalText { vertical-align:middle; }
+.CalendarFormEventInfoContainer { border-collapse:collapse; width:100%; }
+.CalendarFormEventInfoContainer td { padding:0; }
+.CalendarFormEventInfoContainer input,.CalendarFormEventInfoContainer select,.CalendarFormEventInfoContainer textarea { margin:.25em 0; }
+.CalendarFormEventInfoContainer input[type=radio] { margin:0 0.5em; }
+.CalendarFormEventInfoContainer label { margin:0 .5em 0 0; }
+.CalendarFormEventInfoContainer table[id$=rblMapLink] { margin-left:0.7em; }
+.CalendarFormHTMLEditor { height:auto!important; min-width:475px; }
+.EventCalendarButtons { font-size:1em; /* $body-font-size */ padding:0 5px 0 0; }
+.EventCalendarButtonBar { height:auto; padding:0 0 1em; text-align:left; }
+.CalendarFormFieldCaption { vertical-align:middle; width:33%; }
+.DetailLeft { text-align:right; font-weight:700; vertical-align:middle; }
+.DetailDateTime { color:#333; font-size:.92em; font-weight:700; padding:0; border-bottom:0 none; }
+.DetailEventDetails { border:0; }
+.DetailRight { vertical-align:middle; padding:.25em 0 0; }
+.EventCalendarPartContainer .EditEventLocation, .EventCalendarPartContainer .EditEventContactInfo, .EventCalendarPartContainer .EditEventTextBox, .EventCalendarPartContainer .EditEventFees  { height:auto; width:100%; }
+.EventCalendarButtonBar input[type=image], .EventCalendarPartContainer input[id$=ImageButtonFilterEvents2][type=image] { border-width:0; padding-left:0; padding-right:0 }
+span[id$=lblCalName] { display:none; }
+.CalendarFilterSaveContainer { margin-top:-0.5em; }
+.CalendarViewTopLeft label[for$=ddlMonthYear] { display:none; }
+#printStartCV .emptyTD { display:none; }
+.CalendarViewEvent { line-height:1.1em; }
+input[id*="ImageButtonFilterEvents"] { display:none; }
+.CalendarFormDateTimeContainer img.ui-datepicker-trigger { margin-left:-26px; position:absolute; margin-top:7px; }
+
+/* replacement button imgaes */
+
+.EventCalendarButtonBar > input[type="image"], a[id$="ImageButtonPrint"] { background:url("image/css/newEvent.png") no-repeat scroll center 3px #FFFFFF; height:0;
+padding-top:25px; width:25px; vertical-align:top; display:block; float:left; padding-right:3px; padding-top:30px; vertical-align:top; width:25px; }
+
+.EventCalendarButtons { display:block; float:left; font-size:1em; line-height:1em; padding:0 10px 0 6px; width:60px; }
+.EventCalendarButtonBar > input[id$="ImageButtonImportEvents"] { background-image:url("image/css/importEvents.png"); }
+.EventCalendarButtonBar > input[id$="ImageButtonImportEvents"] + a { width:70px; }
+.EventCalendarButtonBar > input[id$="ImageButtonViewList"] { background-image:url("image/css/listView.png"); }
+.EventCalendarButtonBar > a[id$="ImageButtonPrint"] { background-image:url("image/css/printView.png"); display:inline-block; }
+.EventCalendarButtonBar > a[id$="ImageButtonPrint"] img { display:none; }
+.EventCalendarButtonBar > input[id$="ImageButtonExportEvent"] { background-image:url("image/css/exportEvents.png"); }
+.EventCalendarButtonBar > input[id$="ImageButtonExportEvent"] + a { width:85px; }
+.EventCalendarButtonBar > input[id$="ImageButtonViewCalendar"] { background-image:url("image/css/calendarView.png"); }
+.EventCalendarButtonBar > a[id$="lbtnCalView"] { width:80px; }
+a[id*="lbtnFilterEvents"] { float:none; display:inline; width:auto; }
+
+
+.defaultSkin div.ribbon_tab_div {width:100%;}
+
+
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.phoneMode input[id$="ImageButtonViewCalendar"], .phoneMode a[id$="lbtnCalView"] { display:none; }
+.phoneMode .ListViewEventItemContainer div:nth-child(4n-2) { background-color:#dddddd; /* $medium-gray */; }
+.phoneMode .ListViewEventItemContainer div { padding:10px!important; }
+.phoneMode .ListViewEventTitle { color:#490513; /* $link-normal-color */ font-size:1.2em; }
+
+
+/*---------------------------------------------
+    Event Calendar Group
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Event Calendar Highlights
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.UpcomingEventContainer { background-color:transparent; }
+.UpcomingEventContainer br { display:none; }
+#printStart br { display:none; }
+.RecentEventContainer { background-color:transparent; }
+.RecentEventContainer br { display:none; }
+.HighlightEventTitle { display:block; padding:.5em 0 0; }
+ .HighlightEventDate { display:block; }
+.HighlightEventTime { display:block; }
+.HighlightEventCancelled { display:block; }
+.HighlightEventScore { display:block; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Event Registration Form
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+/* Validation */
+.Ev2_ValidationSummary { margin-bottom:1.5em; /* $gutter-width */ }
+
+/* Step navigation */
+ol.BBEventRegSequenceMap { background-color:#dddddd; /* $medium-gray */ }
+ol.BBEventRegSequenceMap li { margin:0 auto; padding:0; width:33%; line-height:1.2em; display:inline-block; text-align:center; }
+ol.BBEventRegSequenceMap li *, ol.BBEventRegSequenceMap li .BBEventRegSequenceMapStepLink:link { color:#999999; font-size:inherit; }
+ol.BBEventRegSequenceMap .BBEventRegSequenceMapStepItem { border-width:0; border-radius:0; background-color:transparent; }
+ol.BBEventRegSequenceMap .BBEventRegSequenceMapStep { font-weight:normal; }
+ol.BBEventRegSequenceMap li.BBEventRegSequenceMapCurrentStep { background:url('image/css/stepbg.png') no-repeat right center; border:0; color:#ffffff; }
+ol.BBEventRegSequenceMap li.BBEventRegSequenceMapCurrentStep span { color:#ffffff; }
+ol.BBEventRegSequenceMap li.BBEventRegSequenceMapCurrentStep:last-of-type { width:34%; background-color:#ffffff; float:right; }
+.BBEventRegSequenceMapStepItem { min-height:0; padding:10px 5px; }
+
+ol.BBEventRegSequenceMap .BBEventRegSequenceMapStep .BBEventRegSequenceMapStepItem, ol.BBEventRegSequenceMap li .BBEventRegSequenceMapStepLink:link { font-size:0px; color:transparent; }
+ol.BBEventRegSequenceMap .BBEventRegSequenceMapStep .BBEventRegSequenceMapStepItem:before,
+ol.BBEventRegSequenceMap .BBEventRegSequenceMapStep .BBEventRegSequenceMapStepItem:after { font-size:18px; /* $body-font-size */ color:#ffffff; /* $text-over-primary-color */ }
+
+ol.BBEventRegSequenceMap .BBEventRegSequenceMapFutureStep .BBEventRegSequenceMapStepItem:before,
+ol.BBEventRegSequenceMap .BBEventRegSequenceMapFutureStep .BBEventRegSequenceMapStepItem:after,
+ol.BBEventRegSequenceMap .BBEventRegSequenceMapPreviousStep .BBEventRegSequenceMapStepItem:before,
+ol.BBEventRegSequenceMap .BBEventRegSequenceMapPreviousStep .BBEventRegSequenceMapStepItem:after { color:#999999; }
+
+ol.BBEventRegSequenceMap .BBEventRegSequenceMapStep a.BBEventRegSequenceMapStepItem:hover:after,
+ol.BBEventRegSequenceMap .BBEventRegSequenceMapStep a.BBEventRegSequenceMapStepItem:hover:before { color:#333333; text-decoration:none; }
+ol.BBEventRegSequenceMap .BBEventRegSequenceMapStep .BBEventRegSequenceMapStepItem:before {background-color:#ffffff; display:inline-block; text-align:center; width:29px; height:29px; line-height:29px; border-radius:50%; margin-right:8px; }
+ol.BBEventRegSequenceMap .BBEventRegSequenceMapStep .BBSequenceMapCurrentStepItem:before { color:#666666; }
+ol.BBEventRegSequenceMap .BBEventRegSequenceMapStep .BBSequenceMapCurrentStepItem:after { color:#ffffff; /* $text-over-primary-color */ }
+.BBEventRegSequenceMapStep:nth-child(1) .BBEventRegSequenceMapStepItem:before { content:"1"; }
+.BBEventRegSequenceMapStep:nth-child(2) .BBEventRegSequenceMapStepItem:before { content:"2"; }
+.BBEventRegSequenceMapStep:nth-child(3) .BBEventRegSequenceMapStepItem:before { content:"3"; }
+.BBEventRegSequenceMapStep:nth-child(1) .BBEventRegSequenceMapStepItem:after { content:"Selection"; }
+.BBEventRegSequenceMapStep:nth-child(2) .BBEventRegSequenceMapStepItem:after { content:"Registration"; }
+.BBEventRegSequenceMapStep:nth-child(3) .BBEventRegSequenceMapStepItem:after { content:"Payment"; }
+
+/* Step 1 - Event Selection */
+.Ev2_EventContainer { clear:both; }
+input.Ev2_TitleCheckbox { display:block; float:left; margin-bottom:20px; }
+.Ev2_DateTimeLeftContainer, .Ev2_DateTimeRightContainer { min-height:0; display:inline; width:auto; }
+.Ev2_DateContainer, .Ev2_TimeContainer, .Ev2_RegistrationEventDateContainer, .Ev2_RegistrationEventTimeContainer  { margin:0; display:inline; width:auto; }
+.Ev2_DateContainer, .Ev2_TimeContainer { background-image:none; }
+.Ev2_RegistrationEventDate, .Ev2_RegistrationEventTime { float:left; }
+.Ev2_DateLabel:after { content:" "; }
+.Ev2_DateLabel, .Ev2_TimeLabels, .Ev2_RegistrationEventDate, .Ev2_RegistrationEventTime     { margin:0 0 0.7em 0; padding:0 12px 0 0; display:inline-block; width:auto; font-style:italic; font-weight:normal; }
+.Ev2_TimeLabels * { font-weight:normal; }
+.Ev2_DescriptionContainer, .Ev2_RegistrationEventDescContainer { clear:both; background-color:#dddddd; /* $medium-gray */ padding:12px; margin-bottom:1em; width:100%; line-height:1.2em; }
+.Ev2_PriceTypesContainer { margin:0; }
+.Ev2_PriceTypesHeader { background-color:#872345; /* $primary-color */ }
+.Ev2_PriceTypesTable, .Ev2_PriceTypesHeader, .Ev2_PriceTypesRow, .Ev2_PriceTypesCell { border:0 none; display:block; }
+.Ev2_PriceTypesTable { width:100%; }
+.Ev2_PriceTypesTable .Ev2_PriceTypesRow { background-color:#dddddd; /* $medium-gray */ border-bottom:1px dotted #aaaaaa; }
+.Ev2_PriceTypesTable .Ev2_PriceTypesRow:nth-child(even) { background-color:#ffffff; }
+.Ev2_PriceTypeQtyColumn input { width:40px; }
+.Ev2_PriceTypesCell { width:25%; float:left; height:50px; }
+.Ev2_PriceTypeQtyColumn input { height:30px; }
+.Ev2_PriceTypeAmountColumn span { line-height:30px; }
+.Ev2_PriceTypeNameColumn { width:50%; padding-top:12px; padding-bottom:8px; }
+.Ev2_PriceTypesHeader .Ev2_PriceTypesCell { height:auto; }
+.Ev2_PriceTypesHeader .Ev2_PriceTypesCell:first-of-type { width:47%; }
+.Ev2_PriceTypesHeader .Ev2_PriceTypesCell[id*=divPriceHeader] { text-align:center; width:28%; }
+.Ev2_PriceTypesHeader .Ev2_PriceTypesCell[id*=divPriceHeader] span[id*=thPrice] { padding-left:20px; }
+.Ev2_PriceTypeNameColumn, .Ev2_PriceTypesHeader .Ev2_PriceTypesCell { text-align:left; }
+.Ev2_PriceTypesHeader .Ev2_PriceTypesCell:last-of-type { display:none; }
+.Ev2_PriceTypeQtyColumn { text-align:left; }
+.Ev2_PriceTypeAmountColumn { text-align:center; padding:10px; }
+.Ev2_PriceTypeValidatorColumn { clear:both; height:auto; padding:0 0 5px 10px; width:100%; }
+.Ev2_PriceDescriptionCell { padding-top:12px; padding-bottom:5px; font-style:italic; }
+.Ev2_Step1QtyValidation { color:#882345; /* $validation-text-color */ display:none; margin-bottom:10px; text-align:center; }
+.Ev2_PriceTypeValidatorColumn.validationActive .Ev2_Step1QtyValidation { display:block; }
+.Ev2_DonationContainer { margin-bottom:1em; }
+.Ev2_SummaryContainer { display:block; margin-top:0; padding-bottom:1em; border:1px solid #dddddd; /* $medium-gray */ }
+.Ev2_SummaryHeader { display:block; background-color:#872345; /* $primary-color */ color:#ffffff; padding:10px; }
+.Ev2_OrgRegContainer { background:transparent; border-width:0; margin:0; float:none; text-align:center; width:100%;     }
+input[id$=chkOrgRegistration] { margin-right:10px; /* $checkbox-to-label-spacing */}
+.Ev2_OrgRegContainer { height:auto; }
+.Ev2_OrgRegText { font-size:inherit; }
+.BBSequenceMapNavigationContainer, .BBSequenceMapOptionalContainer { margin:0 auto; float:none; text-align:center; clear:both; }
+.BBEventRegSequenceMapNavigationNextButton { font-size:inherit; }
+.Ev2_PriceCount { font-size:0.7em; display:inline-block; padding-top:0.2em; }
+
+/* Step 2 - Registration Info */
+.Ev2_RegistrationEventTitleContainer { margin-bottom:0; }
+.Ev2_DidYouMeanToRegisterAs { float:right; }
+.Ev2_RegistrationGroups div[id*=step2] + div.Ev2_RegistrationEventDescContainer { display:none; }
+.Ev2_RegistrantEventHeader { display:none; }
+.Ev2_RegistrantContainer { width:100%; clear:both; border-radius:0; background-color:#f5f5f5; background-image:none; border-width:0; }
+.Ev2_RegistrantLeft { float:none; }
+.Ev2_RegistrantFieldCell { width:100%; position:relative; }
+.Ev2_RegistrantContent .Ev2_RegistrantFieldCell > div, .Ev2_RegistrantContent .Ev2_RegistrantFieldCell > input { float:left; }
+.Ev2_RegistrantContent .Ev2_RegistrantFieldCell > div, .Ev2_RegistrantFieldCell > label { clear:both; padding:0.5em 0.5em 0 0; }
+.Ev2_RegistrantAddressControlDropDown, .Ev2_RegistrantTextArea, .Ev2_RegistrantTextBox { clear:none; width:auto; }
+.Ev2_RegistrantAddressContainer { padding-bottom:0.5em; }
+.Ev2_RegistrantFieldCell div label { display:inline-block; width:100%; text-align:right }
+.Ev2_RegistrantFieldCell > label, .Ev2_RegistrantFieldCell div    { width:30%; text-align:right; }
+.Ev2_RegistrantContent .Ev2_RegistrantFieldCell input { height:auto; }
+.Ev2_RegistrantAddressHeader { display:none; }
+.Ev2_RegistrantAddressForAllContainer label, .Ev2_RegistrantUseBillingContainer label { padding:0; }
+.Ev2_RegistrantContent .Ev2_RegistrantAddressForAllContainer input, .Ev2_RegistrantContent .Ev2_RegistrantUseBillingContainer input { float:none; }
+.Ev2_RegistrantFieldCell .Ev2_RegistrantLink { text-align:left; position:absolute; right:-1em; top:1em; }
+.Ev2_RegistrantLink a { text-decoration:none; }
+.Ev2_RegistrantLink a:hover { text-decoration:underline; }
+.Ev2_RegistrantHeader, .Ev2_RegisterYou { margin-bottom:.5em; /* $margin-below-headings */ }
+.Ev2_TimerContainer { background-color:#FFF8DD; border:1px solid #D3C99E; border-radius:0; margin-bottom:15px; min-height:25px; padding:10px 0 10px 5px; }
+.Ev2_Timer { font-weight:bold; }
+
+@media only screen and /*!YUI Compressor */ (max-width:975px) {
+
+    .Ev2_RegistrantFieldCell .Ev2_RegistrantLink { right:-2em; }
+
+}
+
+@media only screen and /*!YUI Compressor */ (max-width:900px) {
+
+    .Ev2_RegistrantFieldCell .Ev2_RegistrantLink { width:20%; right:0; top:0.6em;  }
+
+}
+
+@media only screen and /*!YUI Compressor */ (max-width:840px) {
+
+    .Ev2_RegistrantFieldCell .Ev2_RegistrantLink { right:-1.6em; }
+    .Ev2_DidYouMeanToRegisterAs { float:right; margin-right:10px; margin-top:-15px; width:20%; }
+
+}
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.mobileMode .Ev2_EventContainer label.checkboxLabel { margin-left:0; }
+.mobileMode div[id$=ev2wiz] input[type=checkbox] { display:none; }
+
+@media only screen and /*!YUI Compressor */ (max-width:768px) {
+
+    .Ev2_DidYouMeanToRegisterAs { width:40%; margin-top:0; text-align:right; }
+    .Ev2_RegistrantFieldCell .Ev2_RegistrantLink { right:0; top:1em; width:30%; }
+
+}
+
+@media only screen and /*!YUI Compressor */ (max-width:720px) {
+
+    .Ev2_RegistrantFieldCell .Ev2_RegistrantLink { right:-1.5em; }
+
+}
+
+@media only screen and /*!YUI Compressor */ (max-width:650px) {
+
+    .Ev2_RegistrantFieldCell .Ev2_RegistrantLink { right:-2.2em; }
+
+}
+
+@media only screen and /*!YUI Compressor */ (max-width:600px) {
+
+    .Ev2_RegistrantContent { margin:0 10px; }
+    input.AdditionalDonation_Amount { margin-top:1em; }
+    .Ev2_RegistrantFieldCell .Ev2_RegistrantLink { display:inline-block; position:static; float:none; right:auto; top:auto; width:auto; margin-left:1em; margin-top:4px; }
+    .Ev2_RegistrantContent input[type=text], .Ev2_RegistrantContent textarea, .Ev2_RegistrantContent select { display:block; width:100%; }
+    .Ev2_RegistrantContent select { margin-top:2px; }
+    .Ev2_RegistrantFieldCell div label { text-align:left; width:auto; float:left; }
+    .Ev2_RegistrantFieldCell > div, .Ev2_RegistrantFieldCell > label  { width:100%; text-align:left; }
+    .Ev2_RegistrantAddressContainer { padding-top:0; }
+    .Ev2_RegistrantContainer .checkboxLabel { margin-left:0; }
+    .Ev2_DidYouMeanToRegisterAs { width:23%; margin-top:-0.9em; }
+    .Ev2_SummaryCell { padding-right:5px; }
+
+}
+
+@media only screen and /*!YUI Compressor */ (max-width:480px) {
+    /* Derry added table height fix July 22 ECBU */
+    .Ev2_PriceTypesCell { width:25%; float:left; height:auto; }
+    ol.BBEventRegSequenceMap .BBEventRegSequenceMapStep .BBEventRegSequenceMapStepItem:before,
+    ol.BBEventRegSequenceMap .BBEventRegSequenceMapStep .BBEventRegSequenceMapStepItem:after { font-size:15px;    }
+    ol.BBEventRegSequenceMap .BBEventRegSequenceMapStep .BBEventRegSequenceMapStepItem:before { width:24px; height:24px; line-height:24px; }
+    .Ev2_RegistrantsContainer { clear:both; }
+    .Ev2_DidYouMeanToRegisterAs { clear:both; width:100%; text-align:left; float:none; margin:0; }
+
+}
+
+@media only screen and /*!YUI Compressor */ (max-width:400px) {
+
+    ol.BBEventRegSequenceMap .BBEventRegSequenceMapStep .BBEventRegSequenceMapStepItem:before { content:"Step"; color:#999999; background-color:transparent; border-radius:0; height:auto; line-height:auto; width:auto; }
+    ol.BBEventRegSequenceMap .BBEventRegSequenceMapStep .BBEventRegSequenceMapStepItem:after { background-color:#ffffff; color:#666666; display:inline-block; text-align:center; width:29px; height:29px; line-height:29px; border-radius:50%; margin-right:8px; }
+    ol.BBEventRegSequenceMap .BBEventRegSequenceMapStep .BBEventRegSequenceMapCurrentStepItem:before { color:#ffffff; /* $text-over-primary-color */ }
+
+    ol.BBEventRegSequenceMap .BBEventRegSequenceMapFutureStep .BBEventRegSequenceMapStepItem:before,
+    ol.BBEventRegSequenceMap .BBEventRegSequenceMapPreviousStep .BBEventRegSequenceMapStepItem:before,
+    ol.BBEventRegSequenceMap .BBEventRegSequenceMapFutureStep .BBEventRegSequenceMapStepItem:after,
+    ol.BBEventRegSequenceMap .BBEventRegSequenceMapPreviousStep .BBEventRegSequenceMapStepItem:after { color:#999999; }
+
+    .BBEventRegSequenceMapStep:nth-child(1) .BBEventRegSequenceMapStepItem:after { content:"1"; }
+    .BBEventRegSequenceMapStep:nth-child(2) .BBEventRegSequenceMapStepItem:after { content:"2"; }
+    .BBEventRegSequenceMapStep:nth-child(3) .BBEventRegSequenceMapStepItem:after { content:"3"; }
+    input.AdditionalDonation_Amount { width:100%; }
+
+    .Ev2_TitleLabel { font-size:1.2em; }
+    .Ev2_TitleCheckbox { margin:2px 5px 0 0; }
+
+    .Ev2_PriceTypesHeader .Ev2_PriceTypesCell:first-of-type { width:40%; }
+    .Ev2_PriceTypeQtyColumn { padding-left:0; }
+    .Ev2_PriceTypeAmountColumn { padding-left:0; }
+
+}
+
+
+/*---------------------------------------------
+    Event Registration Form (Classic)
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.EventAttendeesComplete { background-color:#fafafa; color:#333; font-size:1em; padding-left:0; font-weight:400; }
+.EventAttendeesCurrent { background-color:#fafafa; color:#333; font-size:1em; font-weight:400; padding-left:0; }
+.EventAttendeesFuture { background-color:#fafafa; color:#333; font-size:1em; padding-left:0; font-weight:400; }
+.EventAttendeesGrid { background-color:#fafafa; border:1px solid #888; color:#333; font-size:1em; margin:1em 0; padding-right:0; vertical-align:top; }
+.EventAttendeesOverallTotal { background-color:#fafafa; font-size:.92em; font-weight:400; padding-right:.25em; }
+.EventItemRegistrantsEventName { background-color:transparent; border:medium none; color:#333; font-family:inherit; font-size:1em; font-style:normal; font-weight:700; padding:0 0 .25em; text-align:left; }
+.EventItemsSelectionGrid { border:0 none; margin:0; }
+.EventSectionHeader { font-weight:400; font-size:18px; background-color:transparent; border:medium none; padding:1em 0 .25em; text-align:left; }
+.EventTicketsBodyCell { color:#333; font-size:.92em; font-weight:400; padding-right:.25em; }
+.EventTicketsHeaderCell { color:#333; font-size:.92em; font-weight:700; padding:.25em .25em 1em 0; }
+.SummaryGridEventTitle { font-size:1em; font-style:normal; font-weight:700; }
+.EventItemRegistrantControlCellName { width:33%; padding-bottom:10px; }
+.EventItemRegistrantControlCellName .BBFieldCaption { white-space:nowrap; }
+.EventItemRegistrantsHeader { background-color:transparent; border-bottom:0 none; color:#000; font-family:inherit; font-size:1em; font-weight:700; padding:0 0 .25em; text-align:left; }
+.EventItemRegistrationControlCellDescription { width:55%; padding:0 1em; vertical-align:middle; }
+.EventItemRegistrationControlCellNumParticipants { width:15%; white-space:nowrap; }
+.EventItemRegistrationControlCellPrice { width:20%; }
+.EventItemRegistrationsHeader { background-color:transparent; color:#333; font-family:inherit; font-size:1em; font-weight:700; padding:0 0 .25em; text-align:left; }
+.EventProgressCell { background-color:transparent; border-bottom:3px solid #000; color:#ffffff; /* $button-text-color */ font-family:inherit; font-size:1em; font-weight:normal; height:auto; line-height:normal; padding:.5em 1%; text-align:center; white-space:nowrap; }
+.EventProgressCellFuture { background:transparent none repeat scroll 0 0; border-bottom:3px solid #ccc; color:#999; font-family:inherit; font-size:1em; font-weight:normal; height:auto; line-height:normal; padding:.5em 1%; text-align:center; white-space:nowrap; }
+.EventProgressCellPast { background:transparent; border-bottom:3px solid #ccc; color:#ccc; font-family:inherit; font-size:1em; font-weight:normal; height:auto; line-height:normal; padding:.5em 1%; text-align:center; white-space:nowrap; }
+.EventItemRegistrantControlCell { padding-bottom:10px; white-space:nowrap; }
+.EventItemRegistrantSelectList { width:auto; }
+.EventItemRegistrantsTable { font-size:1em; }
+.EventItemRegistrationsTable { width:100%; margin:0; font-size:1em; }
+.EventItemRegistrationsTable tr { border-bottom:1px solid #888; }
+.EventItemsTable { border:0 none; border-collapse:collapse; }
+.EventTable { margin:0; width:100%; }
+.EventTable .BBFieldCheckboxCaption { display:block; margin:0; }
+.EventTable .BBFieldCheckboxCaption input { height:24px; /* $checkbox-line-height */ }
+.EventTable .EventItemTitleName { line-height:24px; /* $checkbox-line-height */ }
+.EventTable table table { margin-left:0; }
+.EventTable .BBFormSubmitButton { display:block; margin:1em 0 1em auto; }
+.EventTable .BBListEvenRowStyle, .EventTable .BBListOddRowStyle { background-color:transparent!important; }
+.EventTable .LoginFormTextbox { width:100%; }
+.EventItemRegistrantTextbox { width:95%; }
+.EventItemTitleDescription { font-size:1em!important; font-family:inherit!important; color:inherit!important; font-style:normal; text-transform:none!important; }
+table.EventItemsTable .EventItemTitleDescription { border:0 none; color:#333; display:block; font-family:inherit; font-size:1em; font-weight:400; line-height:normal; margin:.5em 0; padding:0;text-transform:none; }
+.EventItemTitleName { border:medium none; color:#333; display:block; font-family:inherit; font-size:1em; font-weight:700; padding:0; text-align:left; }
+.EventItemTitleTime { font-size:1em!important; font-family:inherit!important; color:inherit!important; font-style:italic; text-transform:none!important; }
+table.EventItemsTable .EventItemTitleTime { border:medium none; color:#333; display:block; font-family:inherit; font-size:1em; font-weight:400; padding:0; text-transform:none; }
+table[id$=tblProgress] { background-color:#f3f3f3; }
+.EventProgressCell { background:url('image/css/stepbg.png') no-repeat right center; border:0; }
+.EventProgressCellFuture, .EventProgressCellPast { padding-left:20px; margin-left:-10px; border:0; color:#999999; }
+.EventProgressCell, .EventProgressCellFuture, .EventProgressCellPast { padding:10px; text-align:center; }
+.EventProgressCell.last { background-color:#872345; /* $primary-color */ }
+.EventItemsSelectionGrid { min-width:0; }
+.EventTable table[id*="dgEventItems"] td.EventItemRegistrationsHeader { padding-bottom:10px; }
+input[id*=Attributes][type=checkbox] { height:24px; /* $checkbox-line-height */ }
+.EventTable table[id*=dgEventItems] td { padding-top:0; padding-bottom:0; }
+.EventTable table[id*=dgEventItems] td.EventItemRegistrantsHeader { padding-top:15px; }
+input[id*=Attributes][type=checkbox] + label { line-height:24px; /* $checkbox-line-height */ padding-left:10px; /* $checkbox-to-label-spacing */; }
+td.EventItemRegistrationControlCellQuantity select[id*=ddlQuantity] { width:50px!important; }
+td.EventAttendeesOverallTotal > hr { margin-bottom:0.5em!important; }
+.DonationCaptureFormTable tr[id$=trAmount] > td { padding-bottom:0.5em; }
+
+/* Custom responsive scripts required for these styles */
+.stepIndex { background-color:#ffffff; color:#444; /* $body-copy-color */ display:inline-block; text-align:center; width:25px; height:25px; line-height:25px; border-radius:50%; margin-right:5px; }
+td.checklistLabelContainer { vertical-align:top; padding-top:0; }
+.EventTable .emptyTD { display:none; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+@media only screen and /*!YUI Compressor */ (max-width:850px) {
+
+    .stepText { display:block; }
+}
+
+@media only screen and /*!YUI Compressor */ (max-width:768px) {
+
+    .EventItemRegistrationsTable td.BBFieldCaption,
+    .EventItemRegistrationsTable td.BBFieldControlCell { display:table-cell; width:auto; }
+    .EventItemRegistrationsTable td.EventItemRegistrationControlCellDescription { width:35%; }
+    .EventItemRegistrationsTable td.EventItemRegistrationControlCellNumParticipants { width:25%; }
+    .EventItemRegistrationsTable td.EventItemRegistrationControlCellPrice { width:25%; }
+    .EventTable td.empty { display:none; }
+    .EventTable select[id$=cboYear] { margin-left:20px; }
+    .EventTable .BBFormSubmitButton { margin:1em auto; }
+    .EventTable input[type="text"] { width:100%; }
+    .DonationCaptureFieldControlCellAmount .BBFieldCaption { display:inline; padding-right:0.5em; }
+
+    /* Custom responsive scripts required for these styles */
+    .stepText { display:inline; }
+    .EventTable table[id*="dgEventItems"] .EventItemRegistrantControlCellName, .EventTable table.eventAttributeContainer .BBFieldCaption { display:block; text-align:left; padding:5px 0 0 0; }
+    .EventTable .prevNextContainerTable { margin:0 auto; }
+}
+
+@media only screen and /*!YUI Compressor */ (max-width:585px) {
+
+    .EventTable th[class^=EventProgressCell] { font-size:0.8em; }
+
+    /* Custom responsive scripts required for these styles */
+    .stepIndex { width:22px; height:22px; line-height:22px; }
+}
+
+@media only screen and /*!YUI Compressor */ (max-width:480px) {
+
+    .EventTable th[class^=EventProgressCell] { font-size:1em; }
+    .EventItemRegistrationsTable td.BBFieldCaption,
+    .EventItemRegistrationsTable td.BBFieldControlCell { display:block; width:50%;    }
+    .EventItemRegistrationsTable td.EventItemRegistrationControlCellDescription { padding:0; }
+    .EventItemRegistrationsTable td.EventItemRegistrationControlCellQuantity { display:block; float:right; width:auto; }
+    .EventItemRegistrationsTable { margin-bottom:10px; }
+    .EventItemRegistrationControlCellPrice { padding-bottom:10px; }
+    tr[id$=trAdditionalDonation] td { white-space:normal; }
+    input[id$=txtAdditionalDonation] { display:block; }
+    .EventTable table[id*=dgEventItems] td { padding-bottom:5px; }
+
+    /* Custom responsive scripts required for these styles */
+    .stepText { display:none;  }
+    .stepIndex { width:25px; height:25px; }
+}
+
+
+/*---------------------------------------------
+    Flash Player
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Form Display
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.BBFormDisplaySequenceMapContent .BBFormDisplayTextbox, .BBFormDisplaySequenceMapContent .BBFormDisplayEmail, .BBFormDisplaySequenceMapContent .BBFormDisplayTextArea { width:47%; }
+.BBFormDisplayEmailContainer { padding:5px; }
+.BBFormDisplaySequenceMapContent label { line-height:33px; margin:0.25em 0; padding-right:0.5em; }
+.BBFormRequiredFieldMissingText.BBFormDisplayRequiredFieldMissingText { clear:both; float:right; margin:0.5em 0 0 0; }
+.BBFormDisplayHelp { position:absolute; z-index:100; }
+.BBFormDisplayHelpImage { background-image:url('image/css/help.png'); margin:7px 5px 0 5px; height:25px; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+@media only screen and /*!YUI Compressor */ (max-width:767px) {
+
+    div[id$="formWizard"] .BBFormDisplaySequenceMapContent label, div[id$="formWizard"] .BBFormDisplaySequenceMapContent input, div[id$="formWizard"] .BBFormDisplaySequenceMapContent select, div[id$="formWizard"] .BBFormDisplaySequenceMapContent textarea { width:100%; float:none; margin-top:0; }
+    div[id$="formWizard"] .BBFormDisplaySequenceMapContent label { text-align:left; margin-bottom:0; }
+    div[id$="formWizard"] .BBFormDisplayHelpContainer { display:none; }
+
+}
+
+
+/*---------------------------------------------
+    Frame
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+
+/*---------------------------------------------
+    Fundraiser
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.FRDashBoardSectionHeading { background-color:#0c1c4e; color:#fff; font-family:inherit; font-size:1em; font-weight:700; padding:.25em; white-space:nowrap; }
+.FRDashBoardSection { border:0 none; font-size:1em; }
+.FRDashBoardSection textarea,.FRDashBoardSection input { width:auto!important; }
+.FRDashBoardSection table fieldset legend { color:#000; font-weight:700; font-size:1em; }
+.FRDashBoardSection table fieldset table td,.FRDashBoardSection table fieldset table table table td { white-space:normal!important; }
+.FRDashLink, .FRDashLink:link, .FRDashLink:visited, .FRDashLink:hover, .FRDashLink:active, .FRDashSubHeading, .FRTeamGraphName, .FRTeamName, .FRManagerDashBoardSectionToolbar, .FRManagerDashCaptions:link, .FRManagerDashCaptions:visited, .FRManagerDashCaptions:hover, .FRManagerDashCaptions:active, .FRManagerDashCaptions { font-size:1em; }
+.FRFormTable .FRDashLink { margin:0 1em 0 0; }
+.frTeamGraph { border-collapse:collapse; margin:1em 0; }
+.FRTeamGraphHeading { padding:0 .25em .25em 0; border:0 none; font-size:1em; }
+.FRTeamGraphFooter { padding:.25em; border:0 none; font-size:1em; }
+.FRToDoNewDonationsText { font-size:1em; }
+.FRButtonText { padding:0 3em 0 0; border-right:0 none; }
+.FRButtonTextActive { display:block; }
+.FRButton { padding:0 3em 0 0; border-right:0 none; }
+.FRParticipantName { font-weight:400; margin:0 0 .25em; padding:0 0 .25em; font-size:1em; color:#000; }
+.FRFieldSetCaption { font-size:1.25em; font-weight:700; color:#333; display:block; margin:1em 0 0; }
+.FRFieldSetCaption span,span.FRFieldSetCaption { font-family:inherit; font-weight:400; font-size:1em; }
+.FRCommentsFieldSet .FRFieldSetCaption { color:#333; display:block; font-family:inherit; font-size:1.25em; font-weight:700; margin:0; padding:0; }
+.FRText { font-size:1em; white-space:nowrap; }
+.FRDonorListSetCaption { display:block; margin:0 0 .75em; padding:0 0 .5em; font-size:1.25em; color:#333; font-weight:700; background-color:#fafafa; }
+.FRProgressIndicator { background-color:transparent; border:0 none; border-spacing:0; color:#252525; font-size:1em; font-weight:700; margin:0 0 1em; vertical-align:top; width:100%; }
+.FRSectionHeader { background-color:transparent; color:#333; font-size:1.25em; font-style:normal; font-weight:700; padding:1em 0 .25em; text-align:left; }
+.FRProgressCell { background-color:transparent; border-bottom:3px solid #000; color:#000; font-family:inherit; font-size:1em; font-weight:700; height:auto; line-height:normal; padding:.5em 1%; text-align:center; white-space:nowrap; }
+.FRProgressCellFuture { background:transparent none repeat scroll 0 0; border-bottom:3px solid #ccc; color:#999; font-family:inherit; font-size:1em; font-weight:700; height:auto; line-height:normal; padding:.5em 1%; text-align:center; white-space:nowrap; }
+.FRProgressCellPast { background:transparent url(images/wizardgreencheck.gif) no-repeat scroll 90% 50%; border-bottom:3px solid #ccc; color:#ccc; font-family:inherit; font-size:1em; font-weight:700; height:auto; line-height:normal; padding:.5em 1%; text-align:center; white-space:nowrap; }
+.FRDonorListFieldSet { font-weight:400; margin:0; }
+.FRDonorListFieldset { font-weight:400; margin:0; }
+.FRDonorListEvenRowStyle td { padding:0 .5em 0 0; }
+.FRSearchFieldSet { margin:0; }
+.FRSearchFieldSet .vaBottom { vertical-align:middle; }
+.FRSearchFieldSet table { border-collapse:collapse; margin:auto; }
+.FRCommentsFieldSet { margin:0; }
+.FRCommentsFieldSet legend { margin:0 0 1em; padding:0; }
+.FRCommentsFieldSet table { border-collapse:collapse; }
+.FRCommentsFieldSet td { white-space:normal!important; padding:.25em; vertical-align:top; font-weight:400; }
+.FRCommentsFieldSet td.wsNowrap { white-space:nowrap!important; }
+.FRSubmitButton { margin:0 auto .25em; }
+.FundRaiserSubmitButton { margin:0 auto .25em; }
+.FRFormTable table { background-color:transparent!important; }
+.FRFormTable fieldset div { background-color:#fafafa; border:1px solid #f4f3ee; display:block; overflow:auto; width:680px; }
+.FRFormTable fieldset div table { background-color:transparent!important; }
+.FRFormTable fieldset div div { width:auto; display:block; overflow:auto; border:0 none; background-color:transparent; }
+.FRFormTitle { font-size:18px; color:#000; padding:.5em 0; }
+fieldset .FRFormTitle { padding:.5em 0; font-size:1.25em; color:#333; font-family:inherit; font-weight:700; }
+.FREvenRowStyle td table td { border:0 none; width:auto!important; }
+.FREvenRowStyle td { background-color:transparent; border:0 none; padding:.25em 0; }
+.FREvenRowStyle td span { text-align:left; width:100%; }
+.FRDonorListEvenRowStyle { font-weight:400;}
+.FRDonorListEvenRowStyle td { padding:.25em; }
+.FRListingHeading { background-color:transparent; color:#000; }
+.FRListingHeading td { border-collapse:collapse; font-size:1em; padding:.25em; }
+.FRDonorListHeading { color:#000; }
+.FRDonorListHeading td { padding:0 .5em .5em 0; }
+.FRDonorListing { border-collapse:collapse; border-style:none; width:100%; }
+.FROddRowStyle td table td { border:0; }
+.FROddRowStyle td { background-color:transparent; border:0 none; padding:.5em 0; }
+.FROddRowStyle td span { text-align:left; width:100%; }
+.FRDonorListOddRowStyle { font-weight:400; }
+.FRDonorListOddRowStyle td { padding:0 .5em 0 0; }
+.FRManagerFieldSetCaption { color:#333; font-size:1.25em; font-weight:700; }
+.FRManagerDashBoardSection { font-size:1em; border:0 none; }
+.FRManagerDashBoardSectionHeading { background-color:navy; color:#fff; font-size:1em; font-weight:700; padding:.25em; white-space:nowrap; }
+.FRManagerDashBoardSectionHeading .BBFormTextBox,.FRManagerDashBoardSectionHeading .BBFormTextbox { width:auto; }
+.FRManagerFormTitle { font-size:18px; color:#000; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Fundraiser Page Elements - Scrolling Donor Display
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.Scroller { border:0 none; border-collapse:collapse; font-family:inherit; margin:0 0 1em; }
+td.ScrollerBodyTD { background-color:transparent!important; padding:0 1em!important; }
+.ScrollerBodyTD div { width:auto!important; }
+.ScrollerHeaderTD { background-color:transparent; color:#066; font-size:1.25em; font-weight:400; padding:.75em; text-align:left; }
+.ScrollerHeaderTD span { display:block!important; width:auto!important; }
+.ScrollerLoadingMsg { font-size:1em; padding:.25em; }
+.ScrollerListRow { font-size:.92em; padding:0; }
+.ScrollerItemComment { padding:.25em 1em; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Giving Search
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.GivingSearchFormTable { width:100%; }
+.GivingSearchSearchForm { background-color:#fafafa; 
+ border:0px solid #b6babb; 
+border-collapse:collapse; margin:0; padding:0; width:100%; }
+.GivingSearchResultsHeader { color:#333; display:block; font-size:1em; font-weight:700; margin:1em 0 0; padding:0 0 .25em; text-align:left; text-transform:none; }
+.GivingSearchResultOddRow { clear:both; padding:.5em; }
+.GivingSearchResultCount { color:#666; float:left; margin:.25em .5em 0 0; text-transform:none; }
+.GivingSearchResultEvenRow { background-color:#fafafa; border:0 none; clear:both; padding:.5em; }
+.GivingSearchFieldCaption { color:#000; padding:.5em; text-align:right; padding-left:15%; width:40%; }
+.GivingSearchFieldControlCell { padding:.5em 15% .5em 0; width:60%; }
+.GivingSearchFieldCaption:first-of-type, .GivingSearchFieldCaption:first-of-type + td { padding:1em 10px 0 20px; text-align:left; float:left;  }
+.GivingSearchFieldCaption:first-of-type {width:auto;padding:1.3em 10px 0 20px;}
+
+.GivingSearchFormButtonCell { padding:.5em; }
+.GivingSearchFormTextBox { width:100%; }
+.GivingSearchFormTable br { display:none; }
+.GivingSearchPagingButtons { clear:both; float:none; margin:0 auto; text-align:center; }
+.GivingSearchFormTitle { color:#000; font-size:18px; text-align:left;  padding:0 0 1em 0; }
+.GivingSearchResultLink { padding:0.5em 0 0.5em 0; text-decoration:none; }
+.GivingSearchResultDetails { padding-bottom:0.5em; }
+.GivingSearchResultLink > a, .GivingSearchResultLink > a:hover { text-decoration:none; }
+.GivingSearchFieldControlCell input, .GivingSearchFieldControlCell select { width:100%; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+@media only screen and /*!YUI Compressor */ (max-width:768px) {
+
+    .GivingSearchFieldCaption { padding-left:1em; padding-bottom:0; }
+    .GivingSearchFieldControlCell { padding-left:1em; padding-right:1em; padding-top:0.5em; }
+    .GivingSearchPagingButton { margin:0.5em 0.5em 0 0; padding:0.3em 0.5em; }
+    .GivingSearchFieldCaption:first-of-type + td { padding-top:0.5em; }
+
+}
+
+
+/*---------------------------------------------
+    Job Board
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.JobDetailHeadingCell { background-color:transparent; font-weight:700; padding:.5em 0; width:100%; }
+.JobPostDetailFieldCaption { background-color:transparent; font-weight:700; color:#000; width:33%; padding:.5em .5em .5em 0; }
+.JobPostDetailFieldValue { background-color:transparent; width:auto; padding:0; }
+.JobPostDetailFieldValue span { display:block; margin:.5em 0; }
+.JobResultsFilterFieldCaption { font-family:inherit; font-size:1em; }
+.JobResultsHeadingCell { background-color:transparent; font-weight:700; padding:.5em 0; width:100%; }
+.JobResultsLegend { font-family:inherit; font-size:1em; }
+.JobResultsList { font-family:inherit; font-size:1em; }
+.JobResultsListHeader { font-family:inherit; font-size:1em; font-weight:700; }
+.JobPostDetailTable, .PostJobHeadingCell { background-color:transparent; font-weight:700; padding:.5em 0; width:100%; }
+.JobBoardLegend, .JobDetailLegend, .PostJobLegend, .PreviewJobLegend, .SearchJobLegend, .JobBoardValidationSummary    { font-size:1em; }
+.PreviewJobHeadingCell, .SearchJobHeadingCell { background-color:transparent; font-weight:700; padding:.5em 0; width:100%; }
+.JobSearchFieldCaption { background-color:transparent; width:33%; }
+.JobPostFieldControlCell { width:auto; }
+.JobSearchFieldControlCell { width:60%; }
+.JobPostSelectList, .JobSearchSelectList { width:auto; }
+.JobResultsHeading, .JobBoardFormTable, .JobDetailFormTable, .PreviewJobFormTable, .SearchJobFormTable { font-family:inherit; }
+.PostJobFormTable { font-family:inherit; width:100%; }
+.JobPostTextArea, .JobPostTextboxWide, .JobSearchTextboxWide { width:95%; }
+.JobResultsListHeader td, .JobResultsEvenRowStyle td, .JobResultsOddRowStyle td { padding:0 0.5 0 0; display:inline-block; white-space:normal!important; width:17%; }
+.JobResultsListHeader td:nth-child(4), .JobResultsEvenRowStyle td:nth-child(4), .JobResultsOddRowStyle td:nth-child(4),
+.JobResultsListHeader td:nth-child(5), .JobResultsEvenRowStyle td:nth-child(5), .JobResultsOddRowStyle td:nth-child(5)    { text-align:center; }
+.JobResultsListHeader td:nth-child(6) { display:none; }
+.JobResultsLink:link { line-height:13px; display:inline-block; padding-left:5px; }
+.JobResultsEvenRowStyle td, .JobResultsOddRowStyle td, .JobResultsEvenRowStyle td span, .JobResultsOddRowStyle td span    { font-size:14px; }
+.JobResultsListHeader td:last-of-type, .JobResultsEvenRowStyle td:last-of-type, .JobResultsOddRowStyle td:last-of-type { padding-top:5px; padding-right:10px; width:15%; }
+span[id*="lblSalaryRange"] { padding-right:15px; }
+.JobResultsList td.emptyTD { display:none; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Language Selector
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    LinkedIn Group Join
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.GroupJoinLinkDisabled { display:none; }
+.GroupViewLinkDisabled { display:none; }
+.GroupViewLink, .GroupViewLink:hover, .GroupViewLink:visited { -moz-box-shadow:inset 0px 1px 0px 0px #ffffff; -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff; box-shadow:inset 0px 1px 0px 0px #ffffff; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) ); background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% ); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf'); background-color:#ededed; -moz-border-radius:6px; -webkit-border-radius:6px; border-radius:6px; border:1px solid #dcdcdc; color:#777777; font-size:15px; font-weight:bold; padding:6px 20px;text-decoration:none; }
+.GroupJoinLink, .GroupJoinLink:hover { -moz-box-shadow:inset 0px 1px 0px 0px #ffffff; -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff; box-shadow:inset 0px 1px 0px 0px #ffffff; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) ); background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% ); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf'); background-color:#ededed; -moz-border-radius:6px; -webkit-border-radius:6px; border-radius:6px; border:1px solid #dcdcdc; color:#777777; font-size:15px; font-weight:bold; padding:6px 20px; text-decoration:none; cursor:pointer; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Membership Form
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.BBMembershipBenefitsFormTable { margin:1em; }
+.BBMembershipSummaryActionCaption { display:block; width:100%; padding:0; margin:0; height:auto; font-weight:700; color:#333; }
+.BBMembershipCatDescription { padding:.5em 0 .5em 25px; }
+.BBMembershipCardFieldsetLegend { font-weight:700; color:#333; }
+.BBMembershipSubCategoryFieldCaption { padding:0 .5em 0 0; width:175px; }
+.BBMembershipFieldCaption { padding:.5em .5em .5em 0; text-align:right; vertical-align:middle; width:200px; }
+.MembershipCurrentItem .BBMembershipFieldCaption { padding:0; }
+tr[id$=AdditionalContrib] .BBMembershipFieldCaption { padding:.5em 0!important; }
+.BBMembershipFieldCaption span { display:block; float:left; width:200px; text-align:right; padding-right:.5em; }
+.BBMembershipFieldCaption span[id$=lblSymbol] { display:inline; float:none; padding:0; width:auto; }
+.BBMembershipSummaryFieldCaption { width:33%; padding:.5em .5em .5em 0; }
+.BBMembershipFieldCheckboxCaption { display:block; padding:0; }
+tr[id$=GOM] .BBMembershipFieldCheckboxCaption { margin:.5em 0 0 175px; padding:0 0 0 .5em; }
+.BBMembershipControlCell { padding:.5em 0; vertical-align:middle; }
+.BBMembershipControlCell label,.BBMembershipControlCell span { margin-right:2em; }
+.BBMembershipControlCell span { display:block; white-space:nowrap; width:auto; }
+.BBMembershipControlCell label { font-weight:700; margin:0 .25em; }
+.BBMembershipControlCell .BBMembershipFieldCheckboxCaption label { font-weight:400; }
+.BBMembershipFormReadonlyValue { padding:0; width:auto; text-align:left!important; }
+tr[id$=SummaryBenefits] .BBMembershipFormReadonlyValue { font-weight:700!important; color:#333; padding:0 0 .5em; }
+.BBMembershipBackButton { float:left; margin:0 auto 0 0; }
+.BBMembershipNextButton { margin:0 0 0 auto; float:right; }
+.BBMembershipSubmitButton { float:right; }
+.BBMembershipFormTable { margin:0 1em 1em; width:100%; }
+.BBMembershipFormTable .DonationCaptureFormTable { width:auto; }
+.BBMembershipFormTable fieldset { margin:0 0 1em; padding:0; border:0 none; }
+.BBMembershipFormTable table { width:100%; }
+.BBMembershipTextArea { width:95%; }
+.BBMembershipTextBox { width:auto; }
+.BBMembershipFormTitle { background-color:transparent; border:medium none; color:#000; font-family:inherit; font-size:18px; font-weight:700; height:auto; margin:0; padding:0 0 .5em; text-align:left; text-transform:none;     display:none; }
+.BBMembershipBenefitsGridHeader { font-size:1em; border-top:0 none; display:none; }
+.BBMembershipBenefitsGridItem { font-size:1em; }
+.BBMembershipBenefitsGridItem td { text-align:left; border-bottom:1px solid #d5d5d5; }
+.BBMembershipBenefitsTable { border-color:#FFF!important; border-collapse:collapse; }
+.BBMembershipBenefitsTable td { padding:.5em; font-size:1em; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Menu
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Navigation Button
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    News Reader
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+#contentSidebar .NewsReaderFormImage,#contentSecondary .NewsReaderFormImage { display:none; }
+.NewsReaderResultsList td { padding:0; }
+#contentSecondary .NewsReaderItemDesc,.NewsReaderResultsList br,#contentSidebar .NewsReaderItemDesc,.NewsReaderResultsList br { display:none; }
+.NewsReaderItemLink { display:block; margin:0; font-weight:700; }
+#contentSidebar .NewsReaderItemDesc,#contentSecondary .NewsReaderItemDesc { display:none; }
+.NewsReaderItemDate { display:block; margin:0 0 1em; font-size:1em; font-style:normal; }
+.NewsReaderFormTable { border-collapse:collapse; width:100%; font-family:inherit; font-size:1em; }
+#contentSecondary .NewsReaderFormTable input,#contentSecondary .NewsReaderFormTable label,#contentSidebar .NewsReaderFormTable input,#contentSidebar .NewsReaderFormTable label { display:none; }
+.NewsReaderFormTitle { font-family:inherit; font-size:1em; }
+input[id$="chkHeadlines"] { margin-right:10px; /* $checkbox-to-label-spacing */; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Page Sharing
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.PageSharingContainer { border:0 none; overflow:hidden; padding:0; width:100%; }
+.PageSharingList { clear:both; display:block; float:right; margin:0 0 1em; padding:0; }
+.PageSharingListItem { display:inline; float:none; list-style-image:none; list-style-position:outside; list-style-type:none; margin:0; padding:0; }
+.PageSharingListItemLink { text-decoration:none; }
+.PageSharingListItemLinkImage { background:transparent none repeat scroll 0 0; border:medium none; display:inline; float:none; height:auto; margin:0 .25em 0 0; padding:0; vertical-align:top; width:auto; }
+.PageSharingListItemLinkText { float:none; margin:0 1em 0 0;  padding:0; }
+.PageSharingControlCell { padding:0; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Payment
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Payment Summary
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Payment 2.0
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.PaymentPartSubmitButton { display:block; margin:0; }
+.PaymentPartGrid { border-color:#FFF; margin:1em auto; width:100%; }
+.PaymentPartGrid_Header th { text-align:left; }
+.PaymentPartGrid td,.PaymentPartGrid th { vertical-align:middle; padding:.25em; }
+.PaymentPartGrid tr { border-bottom:1px solid #cfcfc8; }
+.PaymentPartGrid th,.PaymentPartGrid td { border-bottom:1px solid #cfcfc8; }
+.PaymentPartGrid_Header { font-family:inherit; font-size:1em; }
+
+.PaymentPart_FormContainer a[id$=lbRemoveAll], .PaymentPart_FormContainer a.PaymentPart_CartItemRemoveText, .PaymentPart_FormContainer a.PaymentPart_UpdateCartLink,
+.PaymentPart_FormContainer a.PaymentPart_CartItemRemoveText { color:#ffffff; /* $text-over-primary-color */ background-color:#872345; /* $primary-color */ padding:12px; margin:0px; display:inline-block; text-decoration:none;  }
+.PaymentPart_FormContainer a.PaymentPart_CartItemRemoveText, .PaymentPart_FormContainer a.PaymentPart_UpdateCartLink { display:inline-block; margin-right:0; }
+
+.PaymentPart_CartCell { padding:10px 5px; }
+.PaymentPart_CartCell.PaymentPart_CartRemoveCell { padding-right:10px; }
+.PaymentPart_FormContainer label[for*=chk] { padding-left:10px; /* $checkbox-to-label-spacing */ }
+.PaymentPart_CartItemRemoveImage { border-width:0; padding:0; width:0; height:0; }
+.PaymentPart_CartSummary { margin-bottom:10px; }
+.PaymentPart_SectionHeading { background-color:transparent; }
+.PaymentPart_CartSummaryCaptionContainer, .PaymentPart_CartSummaryFieldContainer { line-height:2.2em; }
+.PaymentPart_CartOptions { font-size:.9em; /* $body-font-size */ }
+div[id$=upPayment] .PaymentPart_FormContainer { overflow:visible; }
+div.PaymentPart_Controls { float:none; margin-right:0; text-align:center; margin-top:20px; }
+div.PaymentPart_Controls > input { display:inline; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+@media only screen and /*!YUI Compressor */ (max-width:768px) {
+
+    .DCFieldCaption, .BBDivFieldContainer .DCTextboxWide, .BBDivFieldContainer .BBFormTextArea { width:100%; }
+    .PaymentPart_FormContainer input[type="checkbox"] + label { float:left; }
+    .PaymentPart_FormContainer div[id$=BottomLinkBar] { margin:0; width:100%; text-align:center; clear:both; padding-top:30px; }
+    .PaymentPart_FormContainer div[id$=BottomLinkBar] .PaymentPartSubmitButton { margin:0 auto; }
+    .PaymentPart_PesonalInfoCheckbox { margin-left:0; }
+
+}
+
+@media only screen and /*!YUI Compressor */ (max-width:480px) {
+
+    table.PaymentPart_CartList { border-width:0; }
+    tr.PaymentPart_CartItemTypeRow { border-width:0; }
+    tr.PaymentPart_CartRows th { display:none; }
+    tr.PaymentPart_CartRows td { border-width:0; display:block; float:left; text-align:left; width:100%; }
+    tr.PaymentPart_CartRows td.PaymentPart_CartItemType { background-color:transparent; }
+    td[id*=tdCartQuantityCell]:before { content:"Quantity:"; }
+    td[id*=tdUnitPrice]:before { content:"Unit Price:"; }
+    td[id*=tdCartItemTotalCell]:before { content:"Total Price:"; }
+    tr.PaymentPart_CartRows td.PaymentPart_CartRemoveCell { float:right; width:auto; margin-top:-70px; margin-bottom:0; margin-right:5px; }
+    .PaymentPart_Cart { border-width:0; clear:both; }
+    td[id*=tdCartQuantityCell], td[id*=tdUnitPrice], td[id*=tdCartItemTotalCell] { padding-top:0; padding-bottom:0; }
+    td[id*=tdCartItemTotalCell] { padding-bottom:15px; }
+    .PaymentPart_CartSummaryDetails { float:left; }
+    td.PaymentPart_CartItemType { font-size:24px; }
+    .PaymentPart_CartList .emptyTD { display:none; }
+    input.PaymentPart_CartItemUnitPrice { width:40%; }
+    a.PaymentPart_CartItemLink { font-size:1em; font-weight:bold; }
+    tr.PaymentPart_CartRows td.PaymentPart_CartThumbnailCell { display:none; }
+    .PaymentPart_CartBody tr { border:1px solid #efefef; }
+    .PaymentPart_CartBody tr:first-of-type { border-width:0; }
+
+}
+
+
+/*---------------------------------------------
+    Payment Summary 2.0
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.PaymentPartSummary_Container { width:100%; margin-bottom:1.5em; /* $gutter-width */ }
+.PaymentPartSummary_CartItemRemoveImage { display:none; }
+.PaymentPartSummary_CartItemUnitPrice { width:70px; }
+.PaymentPartSummary_CartSummaryList { margin:0.5em 0 0 0; }
+.PaymentPartSummary_CartList { width:100%; }
+div[id$=MiniCartGrid_CartGrid_cartPanel] { font-size:0.85em; /* $smaller-than-body-font-size */ }
+.wrapPaymentSummary a:after { content:"view cart"; font-size:0.85em; /* $smaller-than-body-font-size */ padding-left:5px; }
+.PaymentPartSummary_CartOptions { display:none; }
+.PaymentPartSummary_Cart { margin-top:0.5em; }
+.PaymentPartSummary_CartSummaryCaptionContainer { width:65%; }
+.PaymentPartSummary_CartSummaryFieldContainer { margin:0; width:35%; text-align:right; }
+.PaymentPartSummary_CartSubtotal { line-height:1.2em; }
+.PaymentPartSummary_CartDescriptionCell { padding-left:0.25em; }
+
+/* DESKTOP OVERRIDES _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.PaymentPartSummary_Container { width:263px; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+@media only screen and /*!YUI Compressor */ (max-width:768px) {
+    div.PaymentPartSummary_Cart { display:none; }
+    div[id$=upCartSummary] { position:relative; }
+    div.PaymentPartSummary_CartOptions { position:absolute; top:0; right:0;}
+    dl.PaymentPartSummary_CartSummaryList { margin-bottom:0; }
+    .PaymentPartSummary_CartSummaryCaptionContainer { text-align:left; width:auto; }
+    .PaymentPartSummary_CartSummaryFieldContainer { float:left; }
+}
+
+
+/*---------------------------------------------
+    Personal Notes
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.BBNotesNoteTopicCell { width:25%; padding:0; font-weight:700; }
+.BBNotesNoteNameCell { font-weight:700; text-align:center; width:50%; padding:0; }
+.BBNotesNoteDateCell { padding:0; font-weight:700; }
+.BBNotesNoteLinkCell { padding:0; }
+.BBNotesNoteCell { padding:.5em 0 0 2em; text-align:left; }
+.BBNotesInstructions { font-style:normal; }
+.BBNotesSearchFormTable { margin:1em 0 0; }
+.BBNotesTabSelected { background:transparent none; font-weight:700; padding:.5em 1em .5em 0; }
+.BBNotesTabUnselected { padding:.5em 1em .5em 0; }
+.BBNotesFieldCaption { font-weight:700; }
+.BBNotesNoteTable { margin:15px 0; }
+.BBNotesLayoutTable { margin:1em 0; }
+.BBNotesSearchFormLayoutTable { margin:1em 0 0; width:100%; }
+.BBNotesTextBox { font-size:1em; margin:.25em 0; border:1px solid #a7a6aa; width:auto; }
+.BBNotesListOddRow { background-color:transparent; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Poll
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.BBPollAnswersRadioList, .BBPollAnswersTable { border-collapse:collapse; }
+.BBPollAnswersRadioList td { padding:0 0 .5em; }
+.BBPollAnswersTableCell, .BBPollResultsTableCell { padding:0; }
+.BBPollResultsTable { border-collapse:collapse; }
+.BBPollsQuestionCell { font-size:1em; padding:.5em 0 1em; }
+.BBPollsQuestionRow { font-weight:400; }
+.BBPollsSubmitButtonCell { padding:1em 0 0; }
+.BBPollsSubmitButton { font-weight:400; }
+.BBPollsFormTable { margin:0 0 1em; }
+.BBPollsFormTitle { padding:0; text-align:left; }
+.BBPollAnswersRadioList input[id*=lstAnswers] { margin-right:10px; /* $checkbox-to-label-spacing */ }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Profile Display
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+table.ProfileDisplayFormTable tr th,table.ProfileDisplayFormTable tr td     { padding-bottom:0.5em; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Profile Form
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.ProfileFieldCaption { vertical-align:middle; }
+.ProfileFieldControlCell div { overflow:auto; height:250px; width:95%; border:2px inset #FFF; }
+.ProfileFormButtonCell { text-align:center; }
+.ProfileFormCheckbox input { margin-right:10px; /* $checkbox-to-label-spacing */ }
+.ProfileFormCheckBoxList input { margin-right:10px; /* $checkbox-to-label-spacing */ margin-left:10px; /* $checkbox-to-label-spacing */ }
+.ProfileFormTable { width:100%; }
+.ProfileFormTable input[id$=private] + label { display:none; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+@media only screen and /*!YUI Compressor */ (max-width:768px) {
+
+    .ProfileFormTable { width:100%; position:relative; }
+    .ProfileFormTable .emptyTD { display:none; }
+    .ProfileFormTable td.ProfileFieldCaption, .ProfileFormTable td.ProfileFieldControlCell, .ProfileFormTable td.ProfileFieldCaptionDisabled { display:block; clear:both; width:100%; text-align:left; }
+    .ProfileFormTable td.ProfileFieldControlCell { width:70%; padding-bottom:0.8em; }
+    .ProfileFormTable td.ProfileFieldControlCell select { width:95%; max-width:95%; }
+    .ProfileFormTable td.ProfileFormPrivateControlCell { position:absolute; right:0; margin-top:-2.4em; width:25%; }
+
+    .ProfileFormCheckbox input[type=checkbox] { display:none; }
+    .ProfileFormTable td.ProfileFieldControlCell { width:60%; }
+    .ProfileFormTable td.ProfileFormPrivateControlCell { width:40%; margin-top:-3.7em; }
+    .ProfileFormTable .checkboxLabel { margin-right:0; }
+    .ProfileFormTable td.ProfileFieldControlCell select { width:100%; max-width:100%; }
+    .ProfileFormTable tr > td.ProfileFormTitle:nth-child(2) { display:none; }
+    .ProfileFormTable input[id$=private] + label { display:inline-block; }
+
+    .ProfileFormTable td.ProfileFieldControlCell, .ProfileFormTable td.ProfileFormPrivateControlCell { position:static; margin-top:0; display:block; width:100%; padding:0; }
+    .ProfileFormTable .checkboxLabel { margin:0.2em 0 1.3em 0; }
+
+}
+
+
+/*---------------------------------------------
+    Quick Search
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+#searchBar {
+margin-top:51px;
+padding:0;
+}
+
+#searchBar span.icon-search {
+left:7px;
+position:absolute;
+top:5px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+#searchBar span.icon-search {
+left:8px;
+position:absolute;
+top:6px;
+}
+}
+
+.QuickSearchTextbox {
+background:#fff;
+border:none;
+border-bottom-left-radius:15px;
+border-top-left-radius:15px;
+font-size:.8em !important;
+height:26px;
+margin:0;
+padding:5px 3px 5px 28px;
+width:186px !important; */
+}
+
+.QuickSearchFormTable {
+float:right;
+position:relative;
+width:auto;
+}
+
+.QuickSearchFormTable td {
+padding:0;
+vertical-align:middle;
+}
+
+.QuickSearchButton {
+border:1px solid #fff;
+border-bottom-right-radius:15px;
+border-top-right-radius:15px;
+height:26px;
+margin:0;
+padding:5px 10px 4px 8px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+.QuickSearchButton { margin-top:1px; }
+}
+
+.QuickSearchFieldCaption {
+display:none;
+padding:0;
+}
+
+input.QuickSearchTextbox[type=text]:focus {
+background-color:#fff;
+}
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+@media only screen and /*!YUI Compressor */ (max-width: 767px) {
+
+    .search-button {
+    -moz-transition:all 250ms ease;
+    -o-transition:all 250ms ease;
+    -webkit-transition:all 250ms ease;
+    background-color:rgba(255,255,255,.3);
+    border-radius:3px;
+    color:#fff;
+    cursor:pointer;
+    font-size:35px;
+    font-weight:700;
+    padding:18px 21px;
+    position:fixed;
+    right:106px;
+    top:20px;
+    transition:all 250ms ease;
+    }
+
+    .show-search {
+    display:none;
+    position:relative;
+    width:100%;
+    }
+
+    .show-search .QuickSearchFormTable {
+    border-top:1px solid #872245;
+    width:100%;
+    }
+
+    .show-search .QuickSearchTextbox {
+    background-color:#dedede;
+    border-radius:0;
+    font-size:1.3em !important;
+    height:50px;
+    margin:0;
+    padding-left:20px;
+    width:100%!important;
+    }
+
+    .show-search .QuickSearchTextbox:focus {
+    background-color:#dedede!important;
+    }
+
+    .show-search .QuickSearchButton {
+    border:none;
+    border-radius:0;
+    height:50px;
+    margin:0;
+    padding:5px 10px 4px;
+    width:100%;
+    }
+
+}
+
+}
+
+
+/*---------------------------------------------
+    Report - Email
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.ReportFormTable > tbody > tr > td[id$=ControlSpace] > .ReportFormTable > tbody > tr > td { display:block; width:100%!important; clear:both; padding-top:1em; }
+.ReportFormTable > tbody > tr > td[id$=ControlSpace] > .ReportFormTable > tbody > tr > td:first-of-type > fieldset { display:block; float:left; }
+.ReportFormTable > tbody > tr > td[id$=ControlSpace] > .ReportFormTable > tbody > tr > td:first-of-type > fieldset:nth-child(1) { width:48%; }
+.ReportFormTable > tbody > tr > td[id$=ControlSpace] > .ReportFormTable > tbody > tr > td:first-of-type > fieldset:nth-child(2) { width:48%; }
+.ReportInformationCell span[id$=LabelChartInfo] { font-size:.9em; /* $body-font-size */ }
+tr[id$=TRReportDetails1] > td > fieldset > div { font-size:0.85em; /* $smaller-than-body-font-size */ }
+.ReportFormTable td.ReportChartCell div, .ReportFormTable td.ReportChartCell td { width:auto!important; height:auto!important; }
+.ReportFormTable .ReportChartCell img[id*=ReportChartControl] { width:100%!important; height:auto!important; }
+.ReportFormTable .ReportListingHeading td { color:#ffffff; }
+.ReportFormTable td.BBFieldCaption { padding-right:0.5em; }
+.ReportFormTable input[type=image][id$=ButtonGo] { border-width:0; padding-bottom:0; padding-right:0.5em; }
+.ReportFormTable img.ui-datepicker-trigger { margin-bottom:-3px; margin-left:-30px; }
+.ReportFormTable table[id*=DateRangePicker] { margin-top:-10px; }
+.ReportFormTable fieldset { padding-bottom:0.5em; margin-right:0.7em; }
+.ReportFormTable td fieldset:nth-child(2) { margin-right:0; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Search
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.SearchTable { white-space:normal!important; }
+tr.SearchHeaderRow td { padding:12px 5px; }
+.BBSearchDescriptionStyle { white-space:normal!important; padding:0 .5em 1em; }
+.SearchFormDescription { padding:.5em 0; }
+.SearchButton { margin:0; }
+.SearchFormTable td.wsNowrap { white-space:normal; }
+.SearchFieldCaption { display:block; }
+.SearchEvenRowStyle td a { display:block; font-weight:normal; padding:9px 6px 3px; }
+.SearchOddRowStyle td a { display:block; font-weight:normal; padding:9px 6px 3px; }
+.SearchFormTable input[id$=btnSearch] { margin-left:10px; /* $checkbox-to-label-spacing */ }
+.BBListOddRowStyle.SearchOddRowStyle a, .BBListEvenRowStyle.SearchEvenRowStyle a { text-decoration:underline; }
+.SearchFormTable .BBListOddRowStyle { background-color:transparent; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Slideshow
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.SlideshowButtonCell br { display:none; }
+.SlideshowPictureCell { height:auto!important; }
+.SlideshowTable { border-collapse:collapse; }
+.SlideshowImage { padding:0; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Suggested Content
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Survey
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.SurveyTitle { display:block; font-family:inherit; font-size:1em; font-weight:700; margin:0 0 1em; padding:0; }
+.SurveyFormTable .BBFormTitle { background:transparent none no-repeat 0 0; padding:0; }
+.SurveySubTitle { font-family:inherit; display:block; font-family:inherit; font-size:.92em; margin:0 0 1em; }
+.SurveyQuestion { font-family:inherit; font-weight:700; display:block; font-size:1em; padding:0; margin-bottom:0.5em; }
+.SurveyQuestionSequence { font-family:inherit; font-weight:700; font-size:1em; }
+.SurveyAnswer { font-family:inherit; font-size:1em; font-weight:400; padding:.5em; }
+label.SurveyAnswer { font-family:inherit; font-size:1em; font-weight:400; padding:0; }
+.SurveyAnswerColumnHeading { font-family:inherit; padding:0 .5em; font-size:1em; }
+.SurveyQuestionSeparator { background-color:transparent; font-size:0; }
+.SurveyResponseColumnHeading { font-size:1em; font-family:inherit; }
+.SurveyResponseCell { font-family:inherit; font-size:1em; }
+.SurveyAnswerTableHeaderRow { background:transparent; font-weight:700; }
+.SurveyTestModeMessage { font-family:inherit; font-size:1em; font-weight:700; }
+.SurveyAnswerRequiredMessage { font-family:inherit; font-weight:400; font-style:normal; font-size:1em; padding:0; }
+.SurveyButton { font-family:inherit; font-size:1em; margin:0; }
+.SurveyFormTable { width:400px; }
+.SurveyQuestionTable td { padding:0 0 .25em; }
+.SurveyAnswerTable { width:100%; }
+.SurveyOpenEndedEssayTextArea { width:95%; }
+.SurveyOpenEndedAnswerTextbox { width:250px; float:left; clear:both; }
+.SurveyCompleteMessage { font-family:inherit; font-size:1em; }
+.SurveyErrorMessage { font-family:inherit; font-size:1em; }
+.SurveyQuestionTable input[id*=mySurveyQuestion][type=radio], .SurveyQuestionTable input[id*=mySurveyQuestion][type=checkbox] { margin-right:10px; /* $checkbox-to-label-spacing */ }
+
+/* custom script required for following styes */
+.SurveyQuestionTable span.emptyTDSpan { display:none; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Tag Display
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Transaction Manager
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.TransactionManagerTabsContainer { border:0; background-color:transparent; margin-left:15px; }
+.TransactionManagerTab {
+    position:relative;
+    float:left;
+    padding:5px 17px 4px 17px;
+    margin-left:0;
+    background-color:#F5F5F5;
+    border-width:1px;
+    border-style:solid;
+    border-color:#C4C4C4; /*$subtle-border-color*/
+    -webkit-border-top-left-radius:8px;
+    -webkit-border-top-right-radius:8px;
+    -moz-border-radius-topleft:8px;
+    -moz-border-radius-topright:8px;
+    border-top-left-radius:8px;
+    border-top-right-radius:8px;
+    -webkit-background-clip:padding-box;
+    -moz-background-clip:padding;
+    background-clip:padding-box;
+    left:-3px;
+    top:0;
+    font-weight:bold;
+    z-index:0;
+}
+.TransactionManagerTab:first-of-type { left:0; }
+.TransactionManagerTabLink {  color:#afafaf; font-size:1.1em; text-decoration:none; border-bottom:none; }
+.TransactionManagerCurrentTab { z-index:2; background-color:#ffffff;  border-bottom-color:#ffffff; margin-top:0; }
+.TransactionManagerCurrentTabLink { color:#872345; /* $primary-color */ }
+.TransactionManagerTabContent {
+    position:relative;
+    z-index:1;
+    clear:both;
+    background-color:#ffffff;
+    border-width:1px;
+    border-style:solid;
+    border-color:#C4C4C4; /*$subtle-border-color*/
+}
+.TransactionManagerHelpTextDiv { padding:0; }
+.TransactionManagerFilterContainer { padding:10px; border:0; width:100%; margin-bottom:0; }
+.TransactionManagerFilterItem { margin:0 0 1.0em 0; }
+.TransactionManagerSpecificDateDiv { float:left; margin-left:71px; width:300px; text-align:left; }
+.TransactionManagerSpecificDateDiv .TransactionManagerFieldContainer { display:inline; text-align:left; margin-right:12px; margin-left:5px; }
+.TransactionManagerFieldContainer .hasDatepicker { width:100px; margin-right:3px; }
+.TransactionManagerFieldContainer select[id$="datePicker"] { width:250px; }
+.TransactionManagerFieldContainer img.ui-datepicker-trigger { margin-left:-32px; margin-top:-2px; }
+.TransactionManagerDatePickerFieldCaption, .TransactionManagerFundPickerFieldCaption, .TransactionManagerGroupPickerCaption { display:block; float:left; width:20%; }
+.TransactionManagerFieldContainer label { line-height:35px; }
+.TransactionManagerSpecificDateDivNotSelected { display:none; }
+.TransactionManagerFilterActions { text-align:left; margin-left:20%; }
+.TransactionManagerFilterActions input[id$=btnFilter] { margin-left:0; margin-bottom:0; margin-top:3px; }
+.TransactionManagerGrid tr[id$=headerRow] th { background-color:#872345; /* $primary-color */ color:#ffffff; font-size:inherit; font-weight:bold; }
+.TransactionManagerInformationGrid { width:100%; }
+.TransactionManagerGrid { width:100%; }
+.TransactionManagerGrid tr[id*=mainRow] td, .TransactionManagerGrid tr[id*=detailsRow], .TransactionManagerSummaryTable td { font-size:inherit; }
+td.TransactionManagerGridDetailCell dl { border-width:1px; border-style:solid; border-color:#eeeeee; /* $subtle-border-color */ margin:10px 20px 20px 20px; padding:15px; }
+.TransactionManagerGridDetailSet { float:left; width:100%; }
+.TransactionManagerGridDetailSet dt.TransactionManagerGridDetailLabel { width:35%; float:left; }
+.TransactionManagerGridDetailSet dd.TransactionManagerGridDetailValue { float:left; width:15%; text-align:right; }
+.PledgePaymentLink { margin-left:5px; }
+.TransactionManagerExportOptionsContainer { display:block!important; float:left; }
+.TransactionManagerExportOptionsContainer ul { float:left; margin:0; list-style-type:none; }
+.TransactionManagerExportOptionsContainer li { margin:5px; float:left; }
+span[id$=ExportTitleLabel] { display:block; float:left; font-weight:bold; line-height:29px; margin-left:5px; margin-right:5px; }
+span[id$=ExportTitleLabel]:after { content:":" }
+a.TransactionManagerExportLink, a.TransactionManagerExportButton { border-bottom:none; }
+.TransactionManagerExportContainer { margin:0; float:right; position:static; width:auto; background-color:transparent; border:0; }
+.TransactionManagerExportOptionsContainer { width:auto; background-color:transparent; }
+.TransactionManagerExportOptionsContainer ul li { margin:0 5px; font-size:14px; line-height:29px; }
+span[id$="ExportTitleLabel"], a.TransactionManagerExportLink { font-size:14px; height:30px; line-height:30px; }
+.Pager { border:0; }
+.PagerInfo { background-color:transparent; }
+.TransactionManagerSummaryContainer { width:100%; }
+.TransactionManagerSummaryTable { border:1px solid #eeeeee; /* $subtle-border-color */ }
+.TransactionManagerSummaryHeaderRow { background-color:#872345; /* $primary-color */ color:#ffffff; font-size:0.85em; /* $smaller-than-body-font-size */ }
+.TransactionManagerSummaryTable th, .TransactionManagerSummaryTable td { padding:5px 15px 5px 5px; line-height:14px; }
+.TransactionManagerSummaryTable th { text-align:center; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    User Education Profile Form
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.EducationListHeader { font-size:1em; font-family:inherit; }
+.EducationFormFieldSet { border:0 none; margin:0; padding:0; }
+.EducationListEvenRowStyle { font-size:1em; font-family:inherit; }
+.EducationListOddRowStyle { font-size:1em; font-family:inherit; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    User Email Preferences Form
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.SubscriptionFormCheckList { border:0 none; }
+.SubscriptionFormTable { border:0 none; }
+.SubscriptionFormTable table { border-collapse:collapse; }
+.SubscriptionFormTable td { padding:0; }
+.SubscriptionFormList input { margin:0 .25em 0 0; }
+.SubscriptionFormList label { padding:0 0 0 .7em; }
+.SubscriptionFormTitle { border:0 none; }
+.SubscriptionFormListHeaderTitle { border:0 none; font-family:inherit; padding:.5em 0 .25em; }
+.SubscriptionFormListHeader { border-collapse:collapse; margin:1em 0 0; }
+td.SubscriptionFormMessage { padding:1em 0; }
+.BSubscriptionFormMessage input { display:block; float:left; margin-bottom:20px; }
+input[id*=rptUserAttributes_cblAttribute][type=checkbox], input[id$=chkOpting] { margin-right:0.25em; height:auto; }
+input[id$=chkOpting] { margin-top:0.25em; }
+label[for*=rptUserAttributes_cblAttribute], label[for$=chkOpting] { padding-left:0.7em; }
+label[for$=chkOpting] { display:block; width:80%; float:left; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+@media only screen and /*!YUI Compressor */ (max-width:768px) {
+
+    table.SubscriptionFormListHeader img { display:none; }
+    table.SubscriptionFormCheckList { width:100%; }
+    .SubscriptionFormTable .SubscriptionFormCheckList label[for*="cblNewsLetters"], .SubscriptionFormTable .Ev2_AttributeCheckList label[for*="cblAttribute"] { display:inline-block; width:auto; padding-left:8px; }
+    .Ev2_AttributeCheckList { width:100%; }
+    input[id$=chkOpting] { margin-top:3px; }
+    table.SubscriptionFormTable .checkboxLabel { margin-left:0; }
+
+}
+
+
+/*---------------------------------------------
+    User Interestes Form
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    User Login
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.LoginSectionHeader { background:transparent; font-style:normal; font-weight:400; text-align:left; }
+.LoginLink { font-family:inherit; font-size:1em; }
+.LoginFieldCaption input { margin:0 .5em 0 0; }
+.LoginFieldMessage { font-family:inherit; font-size:1em; padding:.5em 0; text-align:center; }
+.LoginFormCheckList input { float:left; }
+.LoginFormTable { width:auto; }
+.LoginFormTable table.taCenter { text-align:left; }
+.LoginFormTable tr.taCenter td { text-align:center; }
+.LoginFormTable tr.taCenter td table { width:100%; }
+.LoginFormTable tr.taCenter td table td { text-align:left; }
+.LoginFormTable .BBFormRequiredFieldMarker { width:35%; }
+.LoginFormTextArea, .LoginFormTextBox { margin-right:.5em; }
+.LoginFormTextboxNarrow { width:150px; }
+.LoginFormTitle { background:transparent; }
+table.userLoginPart, table.userLoginPart table { text-align:center; width:100%; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+@media only screen and /*!YUI Compressor */ (max-width:768px) {
+
+    tr[id$=trSignInBody] table { width:100%; }
+
+    /* Requires classes added by responsive scripts */
+    .LoginFormTable .rememberLoginContainer { text-align:center; }
+    .userLoginPart, .userLoginValidationContainer { width:100%; }
+    .LoginFormTable .BBFieldControlCell input { width:100%; }
+    td[id$="LastName"] + td { margin-left:0!important; }
+
+}
+
+
+/*---------------------------------------------
+    User Photos Form
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Volunteer Opportunity
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.BBVolOpInstructions { padding:.5em 0; }
+.BBVolOpJobDetailCaption { width:20%; vertical-align:top; padding-top:.5em; padding-bottom:.5em; }
+.BBVolOpJobDetailFieldValue { padding:.5em 0; }
+.BBVolOpSignUpTextBox { width:80%; }
+.BBVolOpJobListEvenRow td { vertical-align:top; padding:.25em; }
+.BBVolOpJobListHeader td { white-space:nowrap; }
+.BBVolOpJobList { margin:1em 0; }
+.BBVolOpJobListOddRow td { vertical-align:top; padding:.25em; }
+.BBVolOpJobListHeader > td { color:#ffffff; padding:.5em 2em .5em .5em; }
+.BBVolOpJobListEvenRow > td, .BBVolOpJobListOddRow > td { border-bottom:1px dotted #AAAAAA; }
+.BBVolOpSignUpTable > tbody > tr > td { padding-bottom:0.5em; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Weblog
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.NewsChannelFormImage { font-family:inherit; padding:0 0 .25em; }
+.NewsChannelStoryList { font-size:1em; font-family:inherit; width:100%; border-color:#f0f0e6; }
+.NewsChannelStoryListHeader { font-size:1em; font-family:inherit; }
+.NewsChannelItemTitle { font-family:inherit; font-size:18px; }
+.NewsChannelItemDesc { padding:.5em 1em!important; }
+.NewsChannelItemDate { font-family:inherit; font-size:.92em; font-style:normal; }
+.PostChannelStoryHeading { font-family:inherit; font-size:1em; }
+.PostChannelStoryLegend { font-size:1em; font-family:inherit; }
+.ChannelStoryEditButtonWAI { padding:0 0 0 1em; }
+.ChannelStoryDeleteButtonWAI { padding:0 0 0 1em; }
+.ChannelRSSFeedButton { float:right; }
+.PostStoryFieldCaption { font-family:inherit; font-size:1em; font-weight:400; }
+.PostChannelStoryFormTable { font-size:1em; font-family:inherit; margin:1em 0; }
+.NewsChannelFormTitle { font-size:18px; font-family:inherit; width:auto; margin:0 0 .25em; display:block; }
+.PostChannelStoryFormTitle { font-size:1em; font-family:inherit; padding:0 0 .25em; }
+.NewsChannelListingTable { margin:0 0 1em; }
+.NewsChannelListingTable td.taRight table { border-collapse:collapse; margin:0 0 0 auto; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    Web Traffic Reports
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*=========================================================================================
+    13. Other Part and Page Styles
+==========================================================================================*/
+
+/*---------------------------------------------
+    13.1 Return User Landing Page
+----------------------------------------------*/
+
+/*    DESKTOP _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+.myHomeBox { width:100%; }
+.myHomeBox .right { float:none!important; }
+.rightCol .myHomeBox { margin-left:15px; }
+.myHomeBox > tbody > tr > th:first-of-type { display:none; }
+.myHomeBox > tbody > tr > .left { display:none; }
+.myHomeBox table.profileDisplay th, .myHomeBox table.profileDisplay td { line-height:22px; }
+.myHomeBox table.profileDisplay th, .myHomeBox table.profileDisplay td span, .myHomeBox table.profileDisplay td span a, .myHomeBox ul.listMenu a { font-size:14px; }
+.myHomeBox ul.listMenu { margin-top:0; }
+
+/*    MOBILE _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ */
+
+
+/*---------------------------------------------
+    13.2 bxSlider Styles
+----------------------------------------------*/
+
+/**
+ * BxSlider v4.1.2 - Fully loaded, responsive content slider
+ * http://bxslider.com
+ *
+ * Written by: Steven Wanderski, 2014
+ * http://stevenwanderski.com
+ * (while drinking Belgian ales and listening to jazz)
+ *
+ * CEO and founder of bxCreative, LTD
+ * http://bxcreative.com
+ */
+
+
+/** RESET AND LAYOUT
+===================================*/
+
+.bx-wrapper {
+    position: relative;
+    margin: 10px auto 60px;
+    padding: 0;
+    *zoom: 1;
+}
+
+.bx-wrapper img {
+    max-width: 100%;
+    display: block;
+
+}
+
+.bxslider {
+    margin: 0;
+    padding: 0;
+}
+
+/** THEME
+===================================*/
+
+.bx-wrapper .bx-viewport {
+    -moz-box-shadow: 0 0 5px #ccc;
+    -webkit-box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px #ccc;
+    border:  10px solid #fff;
+    background: #fff;
+
+    /*fix other elements on the page moving (on Chrome)*/
+    -webkit-transform: translatez(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    transform: translatez(0);
+}
+
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+}
+
+/* LOADER */
+
+.bx-wrapper .bx-loading {
+    min-height: 50px;
+    background: url(images/bx_loader.gif) center center no-repeat #fff;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+}
+
+/* PAGER */
+
+.bx-wrapper .bx-pager {
+    text-align: center;
+    font-size: .85em;
+    font-family: Arial;
+    font-weight: bold;
+    color: #666;
+    padding-top: 20px;
+}
+
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+    background: #666;
+    text-indent: -9999px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    outline: 0;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+    background: #000;
+}
+
+/* DIRECTION CONTROLS (NEXT / PREV) */
+
+.bx-wrapper .bx-prev {
+    left: 20px;
+    background: url(image/css/controls.png) no-repeat 0 -32px;
+}
+
+.bx-wrapper .bx-next {
+    right: 20px;
+    background: url(image/css/controls.png) no-repeat -43px -32px;
+}
+
+.bx-wrapper .bx-prev:hover {
+    background-position: 0 0;
+}
+
+.bx-wrapper .bx-next:hover {
+    background-position: -43px 0;
+}
+
+.bx-wrapper .bx-controls-direction a {
+    position: absolute;
+    top: 50%;
+    margin-top: -16px;
+    outline: 0;
+    width: 32px;
+    height: 32px;
+    text-indent: -9999px;
+    z-index: 4;
+}
+
+.bx-wrapper .bx-controls-direction a.disabled {
+    display: none;
+}
+
+/* AUTO CONTROLS (START / STOP) */
+
+.bx-wrapper .bx-controls-auto {
+    text-align: center;
+}
+
+.bx-wrapper .bx-controls-auto .bx-start {
+    display: block;
+    text-indent: -9999px;
+    width: 10px;
+    height: 11px;
+    outline: 0;
+    background: url(images/controls.png) -86px -11px no-repeat;
+    margin: 0 3px;
+}
+
+.bx-wrapper .bx-controls-auto .bx-start:hover,
+.bx-wrapper .bx-controls-auto .bx-start.active {
+    background-position: -86px 0;
+}
+
+.bx-wrapper .bx-controls-auto .bx-stop {
+    display: block;
+    text-indent: -9999px;
+    width: 9px;
+    height: 11px;
+    outline: 0;
+    background: url(images/controls.png) -86px -44px no-repeat;
+    margin: 0 3px;
+}
+
+.bx-wrapper .bx-controls-auto .bx-stop:hover,
+.bx-wrapper .bx-controls-auto .bx-stop.active {
+    background-position: -86px -33px;
+}
+
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+    text-align: left;
+    width: 80%;
+}
+
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+    right: 0;
+    width: 35px;
+}
+
+/* IMAGE CAPTIONS */
+
+.bx-wrapper .bx-caption {
+    background: rgba(255, 255, 255, 0.75);
+    bottom: 0;
+    height: 100%;
+    padding: 1.5em;
+    position: absolute;
+    right: 0;
+    text-align: left;
+    width: 33%;
+}
+
+.bx-wrapper .bx-caption p {
+    font-size: .85em;
+}
+
+.bxhidecaptions .bx-caption {display:none;}
+
+
+@media only screen and /*!YUI Compressor */ (max-width:767px) {
+
+    .bx-wrapper { display:none; }
+
+}
+
+
+/*=========================================================================================
+    14. Administrative
+==========================================================================================*/
+
+#tinymce {background:#fff;}
+
+/*---------------------------------------------
+    14.1 Clearfix
+----------------------------------------------*/
+
+.clearfix:before, .clearfix:after, .BBEventRegSequenceMap:before, .TransactionManagerTabContent dl:before, .BBEventRegSequenceMap:after, .TransactionManagerTabContent dl:after {
+    content:" ";
+    display:table;
+}
+
+.clearfix:after, .BBEventRegSequenceMap:after, .TransactionManagerTabContent dl:after {
+    clear:both;
+}
+
+.clearfix, .BBEventRegSequenceMap, .TransactionManagerTabContent dl {
+    *zoom:1;
+}
+
+
+/*---------------------------------------------
+    14.2 Admin Menu Fix
+----------------------------------------------*/
+
+table.DesignMenuTable a { color:#666666 !important; }
+*.bb_mainMenu a { font-weight:normal; }
+*.DesignPane { position:relative; }
+div[id*="_designPaneCloak"] { top:0px !important; left:0px !important; }
+div[id*="_panelPopup"] { top:0px !important; left:0px !important; }
+div[id$=AdminMenuDiv] img { -moz-box-sizing:content-box; box-sizing:content-box; }
+
+#scriptWrapper { display:none; }
+form[action*="pagedesign"] #scriptWrapper { display:block; margin-top:20px; }
+
+
+/*---------------------------------------------
+    14.3 Print Styles
+----------------------------------------------*/
+
+@media print {
+    body {
+        background:#ffffff;
+        font:normal 12pt times, "times new roman", georgia, serif;
+        color:#000;
+        margin:0 0 20px;
+    }
+    /* turn everything off */
+    *.wrapHeader, *.wrapNav, *.wrapMedia, *.contentSecondary,  *.wrapFooter {
+        display:none;
+    }
+    /* turn main content back on */
+        *.contentPrimary, *.contentPrimary .gutter {
+        width:100%;
+        margin:0;
+        padding:0;
+        float:none;
+    }
+    *.wrapContentOuter {
+        margin:0;
+        padding:0;
+        position:static;
+        float:none;
+        width:100%;
+        background:#fff;
+    }
+    /* printer-friendly font family */
+        *.contentPrimary * {
+        font-family:times, "times new roman", georgia, serif;
+    }
+}
+
+/*---------------------------------------------
+    14.4 Min page heights in admin view
+----------------------------------------------*/
+
+form[action*="pagedesign.aspx"] { min-height:3000px; }
